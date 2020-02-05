@@ -1,0 +1,189 @@
+﻿@model NCIT_MIS.ViewModel.RequestDetail
+
+@{
+    ViewBag.Title = "Request_AssetEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var data = "<option value=''>--Select-- </option>";
+    foreach (var a in ViewBag.CategoryList)
+    {
+        data += "<option value='" + a.Value + "'>" + a.Text + "</option>";
+    }
+    <input type="hidden" name="hddCategory" id="hddCategory" value="@data">
+
+    var data1 = "<option value=''>--Select-- </option>";
+    foreach (var a in ViewBag.AssetItemList)
+    {
+        data1 += "<option value='" + a.Value + "'>" + a.Text + "</option>";
+    }
+    <input type="hidden" name="hddItem" id="hddItem" value="@data1">
+}
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">Request Item Edit</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "Request")">List</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                    <input type="hidden" value="@Model.Request.TokenId" name="TokenId" id="TokenId" />
+                                    <div class="form form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Request Token</label>
+                                            <div class="col-sm-4">
+                                                <input id="RequestToken" name="RequestToken" value="@Model.Request.RequestToken" class="form-control" type="text" required="required" readonly>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+                                        <input type='hidden' id="hddrowindex" name='hddrowindex' value='@((Model.RequestItemList).Count())' class='rowcount' />
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                @*<table class="table table-bordered table-condensed unittable" id="ItemUnit">*@
+                                                <table class="table table-bordered table-condensed unittable" id="tab_logic">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="col-sm-4">Category</th>
+                                                            <th class="col-sm-4">Item</th>
+                                                            <th class="col-sm-3">Quantity</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="bItem">
+                                                        @{ int i = 1;}
+                                                        @foreach (var item in Model.RequestItemList)
+                                                        {
+                                                            <tr id="addItem">
+                                                                <td>
+                                                                    <select class='form-control' style='text-transform:uppercase; width:100%' id='LocationId-@i' name='LocationId-@i'>
+                                                                        <option selected>--SELECT--</option>
+                                                                            @foreach (var item1 in ViewBag.LocationList)
+                                                                            {
+                                                                            <option value="@item1.Value" @(item.LocationId == Convert.ToInt32(item1.Value) ? "selected" : "")>@item1.Text</option>
+                                                                            }
+                                                                        <select>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="hidden" name="@i" id="@i" value="@i" class="rowcount1" />
+                                                                    <input type="hidden" name="RequestId-@i" id="RequestId-@i" value="@item.RequestId" class="rowcount1" />
+                                                                    @*<input type='text' id='1' name='1' value='1' hidden>*@
+
+                                                                    <select class='form-control' style='text-transform:uppercase; width:100%' id='AssetCategoryId-@i' name='AssetCategoryId-@i' onchange='GetItem(@i)'>
+                                                                        <option selected>--SELECT--</option>
+                                                                        @foreach (var category in ViewBag.CategoryList)
+                                                                        {
+                                                                            <option value="@category.Value" @(item.AssetCategoryId == Convert.ToInt32(category.Value) ? "selected" : "")>@category.Text</option>
+                                                                        }
+                                                                        <select>
+                                                                </td>
+                                                                <td>
+                                                                    <select class='form-control' style='text-transform:uppercase; width:100%' id='AssetItemId-@i' name='AssetItemId-@i'>
+                                                                        <option selected>--SELECT--</option>
+                                                                        @foreach (var item1 in ViewBag.AssetItemList)
+                                                                        {
+                                                                            <option value="@item1.Value" @(item.RequestItemId == Convert.ToInt32(item1.Value) ? "selected" : "")>@item1.Text</option>
+                                                                        }
+                                                                        <select>
+                                                                </td>
+                                                                <td><input type="text" id="Quantity-@i" name="Quantity-@i" class="form-control" value="@item.RequestQuantity" onblur="GetTotal(@i)" /></td>
+                                                                
+                                                                @*<td><a id='delete_row' title="Remove Item"><i class="fa fa-trash" style="font-size:30px; color:red; align-content:center;" aria-hidden="true"></i></a></td>*@
+                                                            </tr>
+                                                            i++;
+                                                        }
+
+                                                    </tbody>
+                                                    @*<tfoot>
+                                                        <tr>
+                                                            <td colspan="6"><a id='add_row' class="btn btn-default pull-left">Add Row</a></td>
+                                                        </tr>
+
+                                                    </tfoot>*@
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                            <div class="form-group row">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <input type="submit" value="Save" class="btn btn-success" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*add*@
+<script>
+    $(function () {
+        $(".table").on("click", "tr #delete_row", function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure to remove?")) {
+                $(this).parents('tr').remove();
+                CalculateSum();
+            }
+        });
+    });
+    $(document).ready(function () {
+        var i = @((Model.RequestItemList).Count());
+
+        $("#add_row").click(function () {
+            var rowno = $('.rowcount').val();
+            $('#addItem' + i).html("<td><input type='text' id='" + i + "' name='" + i + "' value='" + i + "' hidden><select class='form-control' style='text-transform:uppercase; width:100%' id='AssetCategoryId-" + i + "' name='AssetCategoryId-" + i + "' onchange='GetItem(" + i + ")' > " + document.getElementById("hddCategory").value + " </select></td > " +
+                "<td><input type='hidden' name='RequestId-"+i+"' id='RequestId-"+i+"' value='0' class='rowcount1' /><select class='form-control'  style='text-transform:uppercase; width:100%' id='AssetItemId-" + i + "' name='AssetItemId-" + i + "'>" + document.getElementById("hddItem").value + "<select></td>" +
+                "<td><input type='text' id='Quantity-" + i + "' name='Quantity-" + i + "' class='form-control' onblur='GetTotal(" + i + ")' /></td>" +
+                "<td><a id='delete_row'><i class='fa fa-trash'  style='font-size:30px; color:red;' aria-hidden='true'></i></a></td>");
+
+            $('#bItem').append('<tr id="addItem' + (i + 1) + '"></tr>');
+            var frowno = parseInt(rowno) + 1;
+            $('.rowcount').val(frowno);
+            i++;
+        });
+    });
+</script>
+
+@*Get Item List by CategoryId*@
+<script>
+    function GetItem(i)
+    {
+        var cat = $("#AssetCategoryId-"+i).val();
+
+        $.ajax({
+                url: "@Url.Action("GetItemByCategory", "ForAll")",
+            type: "post",
+            data: { catid: cat},
+            success: function (response, textStatus, jqXHR) {
+                var $select = $("#AssetItemId-" + i);//district dropdown.
+                $select.empty();
+
+
+                $select.append(response);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                //alert("Something went wrong, Select Crew Type Again.");
+            },
+            complete: function () {
+            }
+        });
+    }
+</script>
+
+
+

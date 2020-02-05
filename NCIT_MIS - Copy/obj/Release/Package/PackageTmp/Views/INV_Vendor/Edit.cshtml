@@ -1,0 +1,91 @@
+﻿@model NCIT_MIS.ViewModel.INV_VendorVM
+
+@{
+    ViewBag.Title = "Vendor Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">Vendor Edit</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "INV_Vendor")">List</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <div class="form form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Vendor Name</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("VendorName", Model.VendorName, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.VendorName, "", new { @class = "text-danger" })
+                                                @*<input id="FullName" name="FullName" class="form-control" type="text">*@
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Vendor Code</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("VendorCode", Model.VendorCode, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.VendorCode, "", new { @class = "text-danger" })
+                                                @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Address</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("Address", Model.Address, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                                @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Phone</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("Phone", Model.Phone, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                                @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Mobile</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("Mobile", Model.Mobile, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                                                @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">PanNo</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("PanNo", Model.PanNo, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.PanNo, "", new { @class = "text-danger" })
+                                                @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Update</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

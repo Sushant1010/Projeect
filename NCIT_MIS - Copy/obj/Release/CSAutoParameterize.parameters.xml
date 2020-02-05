@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ncit_mis-Web.config Connection String" description="ncit_mis Connection String used in web.config by the application to access the database." defaultValue="Data Source=.\SQLEXPRESS;User ID='';Password='';Initial Catalog=NCIT_MIS;Integrated Security= SSPI;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\NCIT_MIS\ -\ Final\\NCIT_MIS\ -\ Copy\\NCIT_MIS\ -\ Copy\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ncit_mis']/@connectionString" />
+  </parameter>
+</parameters>

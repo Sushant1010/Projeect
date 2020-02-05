@@ -1,0 +1,93 @@
+﻿@model NCIT_MIS.ViewModel.SystemUserVM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">User Edit</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "User")">List</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <div class="form form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Full Name</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("FullName",Model.FullName, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                                                @*<input id="FullName" name="FullName" class="form-control" type="text">*@
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Email</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("Email", Model.Email, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                                @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Password</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("Password", Model.Password, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                @*<input id="Password" name="Password" class="form-control" type="text">*@
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control">Department</label>
+                                            <div class="col-sm-4">
+                                                @Html.DropDownList("DepartmentId", null, "-- Select --", new { @class = "form-control select2", required = "required" })
+                                                @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control">User Type</label>
+                                            <div class="col-sm-4">
+                                                @Html.EditorFor(model => model.UserType, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control">Is Active?</label>
+                                            <div class="col-sm-4">
+                                                <div class="checkbox">
+                                                    @if (Model.IsActive == true)
+                                                    {
+                                                        @Html.RadioButton("IsActive", "Y", true)<span>&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;</span>
+                                                        @Html.RadioButton("IsActive", "N", false)<span>&nbsp;&nbsp;&nbsp;No</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        @Html.RadioButton("IsActive", "Y", false)<span>&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;</span>
+                                                        @Html.RadioButton("IsActive", "N", true)<span>&nbsp;&nbsp;&nbsp;No</span>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Update</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,102 @@
+﻿@model NCIT_MIS.ViewModel.A_ItemVM
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: -40px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">AssetItem Detail</h1> </div>
+
+    <ol class="breadcrumb">
+        <li class="list">@Html.ActionLink("Edit", "Edit", "A_Item", new { Id = Model.AssetItemId }, new { @class = "btn btn-xs-2 btn-success" })</li>
+        <li class="list">@Html.ActionLink("List", "Index", null, new { @class = "btn btn-xs-2 btn-success" })</li>
+    </ol>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                <div class="form form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control-1">Asset Item Name</label>
+                                        <div class="col-sm-4">
+                                            @*<input id="FullName" name="FullName" class="form-control" type="text">*@
+                                            @Html.TextBoxFor(model => model.AssetItemName, new { @class = "form-control", disabled = "disabled" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control-1">Asset Item Code</label>
+                                        <div class="col-sm-4">
+                                            @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                            @Html.TextBoxFor(model => model.AssetItemCode, new { @class = "form-control", disabled = "disabled" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control">Category Name</label>
+                                        <div class="col-sm-4">
+                                            @Html.TextBoxFor(model => model.CategoryName, new { @class = "form-control", disabled = "disabled" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control">Is Warranty</label>
+                                        <div class="col-sm-4">
+                                            @Html.DisplayFor(model => model.IsWarranty, new { @class = "form-control", disabled = "disabled" })
+                                        </div>
+                                    </div>
+                                    @if ((Model.IsWarranty) == true)
+                                    {
+                                        <div id="Warranty">
+                                            <hr />
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Warranty Duration(In Month)</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.WarrantyDuration, new { @class = "form-control", disabled = "disabled" })
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Warranty Duration(In Date)</label><br>
+                                            </div>
+                                            <hr />
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">From Date (AD)</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.WarrantyFromDate,"{0:yyyy-MM-dd}", new { @class = "form-control", disabled = "disabled" })
+                                                </div>
+                                                <label class="col-sm-2 control-label" for="form-control-1">From Date (BS)</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.WarrantyFromDateBS, new { @class = "form-control", disabled = "disabled" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">To Date (AD)</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.WarrantyToDate,"{0:yyyy-MM-dd}", new { @class = "form-control", disabled = "disabled" })
+                                                </div>
+                                                <label class="col-sm-2 control-label" for="form-control-1">To Date (BS)</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.WarrantyToDateBS, new { @class = "form-control", disabled = "disabled" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

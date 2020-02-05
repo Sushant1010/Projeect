@@ -1,0 +1,141 @@
+﻿@model NCIT_MIS.ViewModel.A_ItemVM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">Asset Item Edit</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "A_Item")">List</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                <div class="form form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control-1">Asset Item Name</label>
+                                        <div class="col-sm-4">
+                                            @*<input id="FullName" name="FullName" class="form-control" type="text">*@
+                                            @Html.TextBoxFor(model => model.AssetItemName, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.AssetItemName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control-1">Asset Item Code</label>
+                                        <div class="col-sm-4">
+                                            @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                            @Html.TextBoxFor(model => model.AssetItemCode, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.AssetItemCode, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control">Category Name</label>
+                                        <div class="col-sm-4">
+                                            @Html.DropDownList("CategoryId", null, "-- Select --", new { @class = "form-control select2", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.AssetCategoryId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control">Is Warranty?</label>
+                                        <div class="col-sm-4">
+                                            <div class="checkbox">
+                                                @Html.RadioButton("IsWarranty", "Y", Model.IsWarranty.Value ? true : false, new { onclick = "showdiv('Y')" })<span>&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;</span>
+                                                @Html.RadioButton("IsWarranty", "N", Model.IsWarranty.Value ? false : true, new { onclick = "showdiv('N')" })<span>&nbsp;&nbsp;&nbsp;No</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div id="Warranty">
+                                            <hr />
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Warranty Duration(In Month)</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.WarrantyDuration, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.WarrantyDuration, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Warranty Duration(In Date)</label><br>
+                                            </div>
+                                            <hr />
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">From Date (AD)</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.WarrantyFromDate, "{0:yyyy-MM-dd}", new { @class = "form-control datepicker" })
+                                                    @Html.ValidationMessageFor(model => model.WarrantyFromDate, "", new { @class = "text-danger" })
+                                                </div>
+                                                <label class="col-sm-2 control-label" for="form-control-1">From Date (BS)</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.WarrantyFromDateBS, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.WarrantyFromDateBS, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">To Date (AD)</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.WarrantyToDate, "{0:yyyy-MM-dd}", new { @class = "form-control datepicker" })
+                                                    @Html.ValidationMessageFor(model => model.WarrantyToDate, "", new { @class = "text-danger" })
+                                                </div>
+                                                <label class="col-sm-2 control-label" for="form-control-1">To Date (BS)</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.WarrantyToDateBS, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.WarrantyToDateBS, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <button class="btn btn-primary" type="submit">Update</button>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showdiv(stype) {
+        if (stype == "Y") {
+            $("#Warranty").show();
+        }
+        else if (stype == "N") {
+            $("#Warranty").hide();
+        }
+    }
+    //For From Date
+    $('#WarrantyFromDate').change(function () {
+        $('#WarrantyFromDateBS').val(AD2BS($('#WarrantyFromDate').val()));
+    });
+
+    $('#WarrantyFromDateBS').nepaliDatePicker({
+        ndpEnglishInput: 'WarrantyFromDate'
+    });
+    //For To Date
+    $('#WarrantyToDate').change(function () {
+        $('#WarrantyToDateBS').val(AD2BS($('#WarrantyToDate').val()));
+    });
+
+    $('#WarrantyToDateBS').nepaliDatePicker({
+        ndpEnglishInput: 'WarrantyToDate'
+    });
+
+    $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd',
+        todayHighlight: 'true',
+        autoclose: 'true',
+        //language:'np',
+});
+</script>

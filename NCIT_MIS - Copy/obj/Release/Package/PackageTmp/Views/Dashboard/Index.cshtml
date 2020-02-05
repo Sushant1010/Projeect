@@ -1,0 +1,988 @@
+﻿@model NCIT_MIS.ViewModel.Dashboard_Detail
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    NCIT_MIS.Repository.UserPermissionRepo db = new NCIT_MIS.Repository.UserPermissionRepo();
+    var userPermission = db.getUesrDetail(Convert.ToInt32(Session["UserId"]));
+}
+    <div class="layout-content-body container">
+        <div class="title-bar" style="margin-bottom: 20px;">
+            <div class="col-xs-12">
+                <h2>
+                    Dashboard
+                </h2>
+            </div>
+        </div>
+
+        @if ((userPermission.IsAdmin) == true)
+        {
+            <div class="row gutter-xs">
+                <a href="@Url.Action("Request_AssetAccept","Request")">
+                    <div class="col-xs-4 col-md-2">
+                        <div class="card">
+                            <div class="card-values">
+                                <div class="p-x">
+                                    <small>Asset Req. Notification</small>
+                                    <h3 class="card-title fw-l" style="color:red;">@ViewBag.AssetRequestNotificationAdmin</h3>
+                                </div>
+                            </div>
+                            <div class="card-chart">
+                                <iframe class="chartjs-hidden-iframe"
+                                        style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                <canvas data-chart="line"
+                                        data-animation="false"
+                                        data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]"
+                                        data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [25250, 23370, 25568, 28961, 26762, 30072, 25135]}]"
+                                        data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 32327}}]}"
+                                        data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]"
+                                        height="43"
+                                        width="371"
+                                        style="display: block; width: 371px; height: 43px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="@Url.Action("AssetStock_Report","Report")">
+                    <div class="col-xs-4 col-md-2">
+                        <div class="card">
+                            <div class="card-values">
+                                <div class="p-x">
+                                    <small>Total Stock Asset Items</small>
+                                    <h3 class="card-title fw-l">@ViewBag.RemainingAssetItemCount</h3>
+                                </div>
+                            </div>
+                            <div class="card-chart">
+                                <iframe class="chartjs-hidden-iframe"
+                                        style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                <canvas data-chart="line"
+                                        data-animation="false"
+                                        data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]"
+                                        data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [8796, 11317, 8678, 9452, 8453, 11853, 9945]}]"
+                                        data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 12742}}]}"
+                                        data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]"
+                                        height="43"
+                                        width="371"
+                                        style="display: block; width: 371px; height: 43px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="col-xs-4 col-md-2">
+                    <div class="card">
+                        <div class="card-values">
+                            <div class="p-x">
+                                <small>Distributed Assets</small>
+                                <h3 class="card-title fw-l">@ViewBag.AssetCount</h3>
+                            </div>
+                        </div>
+                        <div class="card-chart">
+                            <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                            <canvas data-chart="line" data-animation="false" data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]" data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [13590442, 12362934, 13639564, 13055677, 12915203, 11009940, 11542408]}]" data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 14662531}}]}" data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]" height="43" width="371" style="display: block; width: 371px; height: 43px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <a href="@Url.Action("Request_AssetAccept","Request")">
+                    <div class="col-xs-4 col-md-2">
+                        <div class="card">
+                            <div class="card-values">
+                                <div class="p-x">
+                                    <small>Inv. Req. Notification</small>
+                                    <h3 class="card-title fw-l" style="color:red;">@ViewBag.InventoryRequestNotificationAdmin</h3>
+                                </div>
+                            </div>
+                            <div class="card-chart">
+                                <iframe class="chartjs-hidden-iframe"
+                                        style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                <canvas data-chart="line"
+                                        data-animation="false"
+                                        data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]"
+                                        data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [116196, 145160, 124419, 147004, 134740, 120846, 137225]}]"
+                                        data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 158029}}]}"
+                                        data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]"
+                                        height="43"
+                                        width="371"
+                                        style="display: block; width: 371px; height: 43px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="@Url.Action("InventoryStock_Report","Report")">
+                    <div class="col-xs-4 col-md-2">
+                        <div class="card">
+                            <div class="card-values">
+                                <div class="p-x">
+                                    <small>Remaining Inv. Item</small>
+                                    <h3 class="card-title fw-l">@ViewBag.RemainingInventoryItemCount</h3>
+                                </div>
+                            </div>
+                            <div class="card-chart">
+                                <iframe class="chartjs-hidden-iframe"
+                                        style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                <canvas data-chart="line"
+                                        data-animation="false"
+                                        data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]"
+                                        data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [13590442, 12362934, 13639564, 13055677, 12915203, 11009940, 11542408]}]"
+                                        data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 14662531}}]}"
+                                        data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]"
+                                        height="43"
+                                        width="371"
+                                        style="display: block; width: 371px; height: 43px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                @*<div class="col-xs-4 col-md-2">
+                    <div class="card">
+                        <div class="card-values">
+                            <div class="p-x">
+                                <small>Total Inventory</small>
+                                <h3 class="card-title fw-l">50</h3>
+                            </div>
+                        </div>
+                        <div class="card-chart">
+                            <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                            <canvas data-chart="line" data-animation="false" data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]" data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [13590442, 12362934, 13639564, 13055677, 12915203, 11009940, 11542408]}]" data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 14662531}}]}" data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]" height="43" width="371" style="display: block; width: 371px; height: 43px;"></canvas>
+                        </div>
+                    </div>
+                </div>*@
+            </div>
+            <div class="row gutter-xs">
+                <div class="col-xs-12 col-md-6">
+                    <div class="card" aria-expanded="true">
+                        <div class="card-header">
+                            <div class="card-actions">
+                                <button type="button" class="card-action card-toggler" title="Collapse" aria-expanded="true"></button>
+                                <button type="button" class="card-action card-reload" title="Reload"></button>
+                                <button type="button" class="card-action card-remove" title="Remove"></button>
+                            </div>
+                            <strong>Asset Request</strong>
+                        </div>
+                        <div class="card-body" style="display: block;">
+                            <table class="table table-borderless table-middle">
+                                <tbody>
+                                    @{
+                                        int i = 1;
+
+                                    }
+                                    @if (Model.DepartmentList.Count > 0)
+                                    {
+                                        foreach (var item in Model.DepartmentList)
+                                        {
+                                            //foreach (var itemQ in Model.AssetTotalItemCount)
+                                            //{
+                                            if (item.RequestCategory == "Asset")
+                                            {
+                                                <tr>
+                                                    <td class="col-xs-1">@i.</td>
+                                                    <td class="col-xs-4">
+                                                        <a class="link-muted" href="#">@item.DepartmentName</a>
+                                                    </td>
+                                                    <td class="col-xs-3">
+                                                        <a class="link-muted" href="#">@item.RequestCategory</a>
+                                                    </td>
+                                                    <td class="col-xs-1">
+                                                        <div class="text-right">@item.Dashboard_ReportList.RequestQuantity</div>
+                                                    </td>
+                                                    @{
+                                                        double quant = item.Dashboard_ReportList.RequestQuantity;
+                                                        double tot = ViewBag.RemainingAssetItemCount;
+                                                        double per = (quant / tot) * 100;
+                                                    }
+                                                    <td class="col-xs-3">
+                                                        <div class="progress progress-sm m-y-0">
+                                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="@item.Dashboard_ReportList.RequestQuantity" aria-valuemin="0" aria-valuemax="@ViewBag.RemainingAssetItemCount" style="width: @per%">
+                                                                <span class="sr-only">100% Complete</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                i++;
+                                            }
+                                            else { }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td>
+                                                <span>Unable to find asset request....</span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="card" aria-expanded="true">
+                        <div class="card-header">
+                            <div class="card-actions">
+                                <button type="button" class="card-action card-toggler" title="Collapse" aria-expanded="true"></button>
+                                <button type="button" class="card-action card-reload" title="Reload"></button>
+                                <button type="button" class="card-action card-remove" title="Remove"></button>
+                            </div>
+                            <strong>Asset Lowest Stock</strong>
+                        </div>
+                        <div class="card-body" data-toggle="match-height" style="display: block;">
+                            <table class="table table-borderless table-middle">
+                                <tbody>
+                                    @{ i = 1;}
+                                    @foreach (var item in Model.Dashboard_PurchaseItemQuantityList)
+                                    {
+                                        if (item.Dashboard_AssetItemRowCount != null)
+                                        {
+                                            //int assetCount = item.Dashboard_AssetItemRowCount.AssetCount;
+                                            //int purchaseQuantity = item.PurchaseQuantity;
+                                            //int diff = purchaseQuantity - assetCount;
+                                            <tr>
+                                                <td class="col-xs-1">@i.</td>
+                                                <td class="col-xs-6">
+                                                    <a class="link-muted" href="#">@item.AssetItemName</a>
+                                                </td>
+                                                <td class="col-xs-2">
+                                                    <div class="text-right">@item.Dashboard_AssetItemRowCount.AssetCount</div>
+
+                                                </td>
+
+                                                <td class="col-xs-3">
+                                                    <div class="progress progress-sm m-y-0">
+                                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                                            <span class="sr-only">100% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                        else
+                                        {
+                                            //int assetCount = 0;
+
+
+                                            //int purchaseQuantity = item.PurchaseQuantity;
+                                            //int diff = purchaseQuantity-assetCount;
+                                            <tr>
+                                                <td class="col-xs-1">@i.</td>
+                                                <td class="col-xs-6">
+                                                    <a class="link-muted" href="#">@item.AssetItemName</a>
+                                                </td>
+                                                <td class="col-xs-2">
+                                                    <div class="text-right">@item.PurchaseQuantity</div>
+
+                                                </td>
+
+                                                <td class="col-xs-3">
+                                                    <div class="progress progress-sm m-y-0">
+                                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                                            <span class="sr-only">100% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                        i++;
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row gutter-xs">
+                <div class="col-xs-12 col-md-6">
+                    <div class="card" aria-expanded="true">
+                        <div class="card-header">
+                            <div class="card-actions">
+                                <button type="button" class="card-action card-toggler" title="Collapse" aria-expanded="true"></button>
+                                <button type="button" class="card-action card-reload" title="Reload"></button>
+                                <button type="button" class="card-action card-remove" title="Remove"></button>
+                            </div>
+                            <strong>Inventory Request</strong>
+                        </div>
+                        <div class="card-body" style="display: block;">
+                            <table class="table table-borderless table-middle">
+                                <tbody>
+                                    @{ int j = 1;}
+                                    @if (Model.DepartmentList.Count > 0)
+                                    {
+                                        foreach (var item in Model.DepartmentList)
+                                        {
+                                            //foreach (var itemQ in Model.AssetTotalItemCount)
+                                            //{
+                                            if (item.RequestCategory == "Inventory")
+                                            {
+                                                <tr>
+                                                    <td class="col-xs-1">@j.</td>
+                                                    <td class="col-xs-4">
+                                                        <a class="link-muted" href="#">@item.DepartmentName</a>
+                                                    </td>
+                                                    <td class="col-xs-3">
+                                                        <a class="link-muted" href="#">@item.RequestCategory</a>
+                                                    </td>
+                                                    <td class="col-xs-1">
+                                                        <div class="text-right">@item.Dashboard_InvReportList.RequestQuantity</div>
+                                                    </td>
+
+                                                    <td class="col-xs-3">
+                                                        <div class="progress progress-sm m-y-0">
+                                                            @{
+                                                                double quant = item.Dashboard_InvReportList.RequestQuantity;
+                                                                double tot = ViewBag.RemainingInventoryItemCount;
+                                                                double per = (quant / tot) * 100;
+                                                            }
+                                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="@item.Dashboard_InvReportList.RequestQuantity" aria-valuemin="0" aria-valuemax="@ViewBag.RemainingInventoryItemCount" style="width: @per%">
+                                                                <span class="sr-only">100% Complete</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                j++;
+                                            }
+                                            else { }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td>
+                                                <span>Unable to find asset request....</span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="card" aria-expanded="true">
+                        <div class="card-header">
+                            <div class="card-actions">
+                                <button type="button" class="card-action card-toggler" title="Collapse" aria-expanded="true"></button>
+                                <button type="button" class="card-action card-reload" title="Reload"></button>
+                                <button type="button" class="card-action card-remove" title="Remove"></button>
+                            </div>
+                            <strong>Inventory Lowest Stock</strong>
+                        </div>
+                        <div class="card-body" data-toggle="match-height" style="display: block;">
+                            <table class="table table-borderless table-middle">
+                                <tbody>
+                                    @{ i = 1;}
+                                    @foreach (var item in Model.Dashboard_PurchaseInvItemQuantityList)
+                                    {
+                                        if (item.Dashboard_InvItemRowCount != null)
+                                        {
+                                            //int assetCount = item.Dashboard_AssetItemRowCount.AssetCount;
+                                            //int purchaseQuantity = item.PurchaseQuantity;
+                                            //int diff = purchaseQuantity - assetCount;
+                                            <tr>
+                                                <td class="col-xs-1">@i.</td>
+                                                <td class="col-xs-6">
+                                                    <a class="link-muted" href="#">@item.ItemName</a>
+                                                </td>
+                                                <td class="col-xs-2">
+                                                    <div class="text-right">@item.Dashboard_InvItemRowCount.InvCount</div>
+
+                                                </td>
+
+                                                <td class="col-xs-3">
+                                                    <div class="progress progress-sm m-y-0">
+                                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                                            <span class="sr-only">100% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                        else
+                                        {
+                                            //int assetCount = 0;
+
+
+                                            //int purchaseQuantity = item.PurchaseQuantity;
+                                            //int diff = purchaseQuantity-assetCount;
+                                            <tr>
+                                                <td class="col-xs-1">@i.</td>
+                                                <td class="col-xs-6">
+                                                    <a class="link-muted" href="#">@item.ItemName</a>
+                                                </td>
+                                                <td class="col-xs-2">
+                                                    <div class="text-right">@item.PurchaseQuantity</div>
+
+                                                </td>
+
+                                                <td class="col-xs-3">
+                                                    <div class="progress progress-sm m-y-0">
+                                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                                            <span class="sr-only">100% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                        i++;
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if ((userPermission.AssetModuleAllow) == true || (userPermission.InventoryModuleAllow) == true)
+        {
+            <div class="row gutter-xs">
+                <a href="@Url.Action("Request_AssetAcceptStore","Request")">
+                    <div class="col-xs-4 col-md-2">
+                        <div class="card">
+                            <div class="card-values">
+                                <div class="p-x">
+                                    <small>Requeset Notification</small>
+                                    <h3 class="card-title fw-l" style="color:red;">@ViewBag.AssetRequestNotification</h3>
+                                </div>
+                            </div>
+                            <div class="card-chart">
+                                <iframe class="chartjs-hidden-iframe"
+                                        style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                <canvas data-chart="line"
+                                        data-animation="false"
+                                        data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]"
+                                        data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [25250, 23370, 25568, 28961, 26762, 30072, 25135]}]"
+                                        data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 32327}}]}"
+                                        data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]"
+                                        height="43"
+                                        width="371"
+                                        style="display: block; width: 371px; height: 43px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="col-xs-4 col-md-2">
+                    <div class="card">
+                        <div class="card-values">
+                            <div class="p-x">
+                                <small>Total Remaining Asset Items</small>
+                                <h3 class="card-title fw-l">@ViewBag.RemainingAssetItemCount</h3>
+                            </div>
+                        </div>
+                        <div class="card-chart">
+                            <iframe class="chartjs-hidden-iframe"
+                                    style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                            <canvas data-chart="line"
+                                    data-animation="false"
+                                    data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]"
+                                    data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [8796, 11317, 8678, 9452, 8453, 11853, 9945]}]"
+                                    data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 12742}}]}"
+                                    data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]"
+                                    height="43"
+                                    width="371"
+                                    style="display: block; width: 371px; height: 43px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-md-2">
+                    <div class="card">
+                        <div class="card-values">
+                            <div class="p-x">
+                                <small>Assets</small>
+                                <h3 class="card-title fw-l">@ViewBag.AssetCount</h3>
+                            </div>
+                        </div>
+                        <div class="card-chart">
+                            <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                            <canvas data-chart="line" data-animation="false" data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]" data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [13590442, 12362934, 13639564, 13055677, 12915203, 11009940, 11542408]}]" data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 14662531}}]}" data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]" height="43" width="371" style="display: block; width: 371px; height: 43px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-xs-4 col-md-2">
+                    <div class="card">
+                        <div class="card-values">
+                            <div class="p-x">
+                                <small>Users</small>
+                                <h3 class="card-title fw-l">@ViewBag.UserCount</h3>
+                            </div>
+                        </div>
+                        <div class="card-chart">
+                            <iframe class="chartjs-hidden-iframe"
+                                    style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                            <canvas data-chart="line"
+                                    data-animation="false"
+                                    data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]"
+                                    data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [116196, 145160, 124419, 147004, 134740, 120846, 137225]}]"
+                                    data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 158029}}]}"
+                                    data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]"
+                                    height="43"
+                                    width="371"
+                                    style="display: block; width: 371px; height: 43px;"></canvas>
+                        </div>
+                    </div>
+                </div>*@
+                <a href="@Url.Action("Request_AssetAcceptStore","Request")">
+                    <div class="col-xs-4 col-md-2">
+                        <div class="card">
+                            <div class="card-values">
+                                <div class="p-x">
+                                    <small>Inv. Req. Notification</small>
+                                    <h3 class="card-title fw-l" style="color:red;">@ViewBag.InventoryRequestNotification</h3>
+                                </div>
+                            </div>
+                            <div class="card-chart">
+                                <iframe class="chartjs-hidden-iframe"
+                                        style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                <canvas data-chart="line"
+                                        data-animation="false"
+                                        data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]"
+                                        data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [116196, 145160, 124419, 147004, 134740, 120846, 137225]}]"
+                                        data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 158029}}]}"
+                                        data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]"
+                                        height="43"
+                                        width="371"
+                                        style="display: block; width: 371px; height: 43px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="@Url.Action("InventoryStock_Report","Report")">
+                    <div class="col-xs-4 col-md-2">
+                        <div class="card">
+                            <div class="card-values">
+                                <div class="p-x">
+                                    <small>Remaining Inv. Item</small>
+                                    <h3 class="card-title fw-l">@ViewBag.RemainingInventoryItemCount</h3>
+                                </div>
+                            </div>
+                            <div class="card-chart">
+                                <iframe class="chartjs-hidden-iframe"
+                                        style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                <canvas data-chart="line"
+                                        data-animation="false"
+                                        data-labels="[&quot;Jun 21&quot;, &quot;Jun 20&quot;, &quot;Jun 19&quot;, &quot;Jun 18&quot;, &quot;Jun 17&quot;, &quot;Jun 16&quot;, &quot;Jun 15&quot;]"
+                                        data-values="[{&quot;backgroundColor&quot;: &quot;rgba(2, 136, 209, 0.03)&quot;, &quot;borderColor&quot;: &quot;#0288d1&quot;, &quot;data&quot;: [13590442, 12362934, 13639564, 13055677, 12915203, 11009940, 11542408]}]"
+                                        data-scales="{&quot;yAxes&quot;: [{ &quot;ticks&quot;: {&quot;max&quot;: 14662531}}]}"
+                                        data-hide="[&quot;legend&quot;, &quot;points&quot;, &quot;scalesX&quot;, &quot;scalesY&quot;, &quot;tooltips&quot;]"
+                                        height="43"
+                                        width="371"
+                                        style="display: block; width: 371px; height: 43px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="row gutter-xs">
+                <div class="col-xs-12 col-md-6">
+                    <div class="card" aria-expanded="true">
+                        <div class="card-header">
+                            <div class="card-actions">
+                                <button type="button" class="card-action card-toggler" title="Collapse" aria-expanded="true"></button>
+                                <button type="button" class="card-action card-reload" title="Reload"></button>
+                                <button type="button" class="card-action card-remove" title="Remove"></button>
+                            </div>
+                            <strong>Asset Request</strong>
+                        </div>
+                        <div class="card-body" style="display: block;">
+                            <table class="table table-borderless table-middle">
+                                <tbody>
+                                    @{
+                                        int i = 1;
+
+                                    }
+                                    @if (Model.DepartmentList.Count > 0)
+                                    {
+                                        foreach (var item in Model.DepartmentList)
+                                        {
+                                            //foreach (var itemQ in Model.AssetTotalItemCount)
+                                            //{
+                                            <tr>
+                                                <td class="col-xs-1">@i.</td>
+                                                <td class="col-xs-6">
+                                                    <a class="link-muted" href="#">@item.DepartmentName</a>
+                                                </td>
+                                                <td class="col-xs-2">
+                                                    <div class="text-right">@item.Dashboard_ReportList.RequestQuantity</div>
+                                                </td>
+                                                @*@if (item.Dashboard_ReportList.RequestItemId == itemQ.AssetItemId)
+                                                {
+                                                    if (item.Dashboard_ReportList.RequestQuantity > itemQ.RemainingQuantity)
+                                                    {
+                                                        <td class="col-xs-3">
+                                                            <div class="progress progress-sm m-y-0">
+                                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@item.Dashboard_ReportList.RequestQuantity" aria-valuemin="0" aria-valuemax="@itemQ.RemainingQuantity" style="width: @item.Dashboard_ReportList.RequestQuantity%">
+                                                                    <span class="sr-only">100% Complete</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    }
+                                                    else
+                                                    {*@
+                                                <td class="col-xs-3">
+                                                    <div class="progress progress-sm m-y-0">
+                                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="@item.Dashboard_ReportList.RequestQuantity" aria-valuemin="0" aria-valuemax="100" style="width: @item.Dashboard_ReportList.RequestQuantity%">
+                                                            <span class="sr-only">100% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                @*}
+                                                }*@
+                                            </tr>
+                                            @*}*@
+                                            i++;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td>
+                                                <span>Unable to find asset request....</span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="card" aria-expanded="true">
+                        <div class="card-header">
+                            <div class="card-actions">
+                                <button type="button" class="card-action card-toggler" title="Collapse" aria-expanded="true"></button>
+                                <button type="button" class="card-action card-reload" title="Reload"></button>
+                                <button type="button" class="card-action card-remove" title="Remove"></button>
+                            </div>
+                            <strong>Asset Lowest Stock</strong>
+                        </div>
+                        <div class="card-body" data-toggle="match-height" style="display: block;">
+                            <table class="table table-borderless table-middle">
+                                <tbody>
+                                    @{ i = 1;}
+                                    @foreach (var item in Model.Dashboard_PurchaseItemQuantityList)
+                                    {
+                                        if (item.Dashboard_AssetItemRowCount != null)
+                                        {
+                                            //int assetCount = item.Dashboard_AssetItemRowCount.AssetCount;
+                                            //int purchaseQuantity = item.PurchaseQuantity;
+                                            //int diff = purchaseQuantity - assetCount;
+                                            <tr>
+                                                <td class="col-xs-1">@i.</td>
+                                                <td class="col-xs-6">
+                                                    <a class="link-muted" href="#">@item.AssetItemName</a>
+                                                </td>
+                                                <td class="col-xs-2">
+                                                    <div class="text-right">@item.Dashboard_AssetItemRowCount.AssetCount</div>
+
+                                                </td>
+
+                                                <td class="col-xs-3">
+                                                    <div class="progress progress-sm m-y-0">
+                                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                                            <span class="sr-only">100% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                        else
+                                        {
+                                            //int assetCount = 0;
+
+
+                                            //int purchaseQuantity = item.PurchaseQuantity;
+                                            //int diff = purchaseQuantity-assetCount;
+                                            <tr>
+                                                <td class="col-xs-1">@i.</td>
+                                                <td class="col-xs-6">
+                                                    <a class="link-muted" href="#">@item.AssetItemName</a>
+                                                </td>
+                                                <td class="col-xs-2">
+                                                    <div class="text-right">@item.PurchaseQuantity</div>
+
+                                                </td>
+
+                                                <td class="col-xs-3">
+                                                    <div class="progress progress-sm m-y-0">
+                                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                                            <span class="sr-only">100% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                        i++;
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row gutter-xs">
+                <div class="col-xs-12 col-md-6">
+                    <div class="card" aria-expanded="true">
+                        <div class="card-header">
+                            <div class="card-actions">
+                                <button type="button" class="card-action card-toggler" title="Collapse" aria-expanded="true"></button>
+                                <button type="button" class="card-action card-reload" title="Reload"></button>
+                                <button type="button" class="card-action card-remove" title="Remove"></button>
+                            </div>
+                            <strong>Inventory Request</strong>
+                        </div>
+                        <div class="card-body" style="display: block;">
+                            <table class="table table-borderless table-middle">
+                                <tbody>
+                                    @{ int j = 1;}
+                                    @if (Model.DepartmentList.Count > 0)
+                                    {
+                                        foreach (var item in Model.DepartmentList)
+                                        {
+                                            //foreach (var itemQ in Model.AssetTotalItemCount)
+                                            //{
+                                            if (item.RequestCategory == "Inventory")
+                                            {
+                                                <tr>
+                                                    <td class="col-xs-1">@j.</td>
+                                                    <td class="col-xs-4">
+                                                        <a class="link-muted" href="#">@item.DepartmentName</a>
+                                                    </td>
+                                                    <td class="col-xs-3">
+                                                        <a class="link-muted" href="#">@item.RequestCategory</a>
+                                                    </td>
+                                                    <td class="col-xs-1">
+                                                        <div class="text-right">@item.Dashboard_InvReportList.RequestQuantity</div>
+                                                    </td>
+
+                                                    <td class="col-xs-3">
+                                                        <div class="progress progress-sm m-y-0">
+                                                            @{
+                                                                double quant = item.Dashboard_InvReportList.RequestQuantity;
+                                                                double tot = ViewBag.RemainingInventoryItemCount;
+                                                                double per = (quant / tot) * 100;
+                                                            }
+                                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="@item.Dashboard_InvReportList.RequestQuantity" aria-valuemin="0" aria-valuemax="@ViewBag.RemainingInventoryItemCount" style="width: @per%">
+                                                                <span class="sr-only">100% Complete</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                j++;
+                                            }
+                                            else { }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td>
+                                                <span>Unable to find asset request....</span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="card" aria-expanded="true">
+                        <div class="card-header">
+                            <div class="card-actions">
+                                <button type="button" class="card-action card-toggler" title="Collapse" aria-expanded="true"></button>
+                                <button type="button" class="card-action card-reload" title="Reload"></button>
+                                <button type="button" class="card-action card-remove" title="Remove"></button>
+                            </div>
+                            <strong>Inventory Lowest Stock</strong>
+                        </div>
+                        <div class="card-body" data-toggle="match-height" style="display: block;">
+                            <table class="table table-borderless table-middle">
+                                <tbody>
+                                    @{ i = 1;}
+                                    @foreach (var item in Model.Dashboard_PurchaseInvItemQuantityList)
+                                    {
+                                        if (item.Dashboard_InvItemRowCount != null)
+                                        {
+                                            //int assetCount = item.Dashboard_AssetItemRowCount.AssetCount;
+                                            //int purchaseQuantity = item.PurchaseQuantity;
+                                            //int diff = purchaseQuantity - assetCount;
+                                            <tr>
+                                                <td class="col-xs-1">@i.</td>
+                                                <td class="col-xs-6">
+                                                    <a class="link-muted" href="#">@item.ItemName</a>
+                                                </td>
+                                                <td class="col-xs-2">
+                                                    <div class="text-right">@item.Dashboard_InvItemRowCount.InvCount</div>
+
+                                                </td>
+
+                                                <td class="col-xs-3">
+                                                    <div class="progress progress-sm m-y-0">
+                                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                                            <span class="sr-only">100% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                        else
+                                        {
+                                            //int assetCount = 0;
+
+
+                                            //int purchaseQuantity = item.PurchaseQuantity;
+                                            //int diff = purchaseQuantity-assetCount;
+                                            <tr>
+                                                <td class="col-xs-1">@i.</td>
+                                                <td class="col-xs-6">
+                                                    <a class="link-muted" href="#">@item.ItemName</a>
+                                                </td>
+                                                <td class="col-xs-2">
+                                                    <div class="text-right">@item.PurchaseQuantity</div>
+
+                                                </td>
+
+                                                <td class="col-xs-3">
+                                                    <div class="progress progress-sm m-y-0">
+                                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                                            <span class="sr-only">100% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                        i++;
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if ((userPermission.RequestModuleAllow == true))
+        {
+            <div class="col-xs-12 col-md-6">
+                <div class="card" aria-expanded="true">
+                    <div class="card-header">
+                        <div class="card-actions">
+                            <button type="button" class="card-action card-toggler" title="Collapse" aria-expanded="true"></button>
+                            <button type="button" class="card-action card-reload" title="Reload"></button>
+                            <button type="button" class="card-action card-remove" title="Remove"></button>
+                        </div>
+                        <strong>Request Request History</strong>
+                    </div>
+                    <div class="card-body" data-toggle="match-height" style="display: block;">
+                        <table class="table table-borderless table-striped table-middle">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>
+                                        Location
+                                    </th>
+                                    <th>
+                                        Quantity
+                                    </th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    decimal amt = 0;
+
+                                }
+                                @foreach (var item in Model.Dashboard_DepartmentsRequestStatus)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.AssetItemName)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.LocationName)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.RequestQuantity)</td>
+                                        <td>
+                                            @if (item.ApprovedByAdmin == "Approved" && item.RequestStatus == "Approved")
+                                            {
+                                                <b class="btn-sm btn-success" disabled>Approved</b>
+                                            }
+                                            else if (item.ApprovedByAdmin == "Reject" || item.RequestStatus == "Reject")
+                                            {
+                                                <b class="btn-sm btn-danger" disabled>Reject</b>
+                                            }
+                                            else
+                                            {
+                                                <b class="btn-sm btn-warning" disabled>Pending</b>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a class="btn btn-sm btn-block btn-success" style="float:right" href="@Url.Action("", "Request")">View All</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-6">
+                <div class="card" aria-expanded="true">
+                    <div class="card-header">
+                        <div class="card-actions">
+                            <button type="button" class="card-action card-toggler" title="Collapse" aria-expanded="true"></button>
+                            <button type="button" class="card-action card-reload" title="Reload"></button>
+                            <button type="button" class="card-action card-remove" title="Remove"></button>
+                        </div>
+                        <strong>Inventory Request History</strong>
+                    </div>
+                    <div class="card-body" data-toggle="match-height" style="display: block;">
+                        <table class="table table-borderless table-striped table-middle">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>
+                                        Quantity
+                                    </th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                @foreach (var item in Model.Dashboard_DepartmentsInventoryRequestStatus)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.ItemName)</td>
+                                        @*<td>@Html.DisplayFor(modelItem => item.LocationName)</td>*@
+                                        <td>@Html.DisplayFor(modelItem => item.RequestQuantity)</td>
+                                        <td>
+                                            @if (item.ApprovedByAdmin == "Approved" && item.RequestStatus == "Approved")
+                                            {
+                                                <b class="btn-sm btn-success" disabled>Approved</b>
+                                            }
+                                            else if (item.ApprovedByAdmin == "Reject" || item.RequestStatus == "Reject")
+                                            {
+                                                <b class="btn-sm btn-danger" disabled>Reject</b>
+                                            }
+                                            else
+                                            {
+                                                <b class="btn-sm btn-warning" disabled>Pending</b>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a class="btn btn-sm btn-block btn-success" style="float:right" href="@Url.Action("", "Request")">View All</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+

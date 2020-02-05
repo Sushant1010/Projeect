@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layout-content-body container">
+        <div class="title-bar" style="margin-bottom: 20px;">
+            <div class="col-xs-10">  <h1 class="title-bar-title">Asset Item Create</h1> </div>
+            <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "A_Item")">List</a>
+
+        </div>
+        <div class="row no-gutters">
+            <div class="col-xs-12  ">
+                <div class="card" style="margin-top: 30px;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="demo-form-wrapper">
+                                    @using (Html.BeginForm())
+                                    {
+                                        <input type="text" id="SesFullName" name="SesFullName" hidden="hidden" value='@Session["FullName"]' />
+                                        <input type="text" id="SesDepartmentId" name="SesDepartmentId" hidden="hidden" value='@Session["DepartmentId"]' />
+                                        <input type="text" id="SesUserType" name="SesUserType" hidden="hidden" value='@Session["UserType"]' />
+                                        <input type="text" id="SesUserId" name="SesUserId" hidden="hidden" value='@Session["UserId"]' />
+                                        <div class="form form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Asset Item Name</label>
+                                                <div class="col-sm-4">
+                                                    <input id="AssetName" name="AssetName" class="form-control" type="text" required = "required">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Asset Item Code</label>
+                                                <div class="col-sm-4">
+                                                    <input id="AssetCode" name="AssetCode" class="form-control" type="text" required = "required">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control">Category</label>
+                                                <div class="col-sm-4">
+                                                    @Html.DropDownList("CategoryId", null, "-- Select --", new { @class = "form-control select2 DepartmentId", required = "required" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control">Is Warranty?</label>
+                                                <div class="col-sm-4">
+                                                    <div class="checkbox">
+                                                        @Html.RadioButton("IsWarranty", "Y", false, new { onclick = "showdiv('Y')" })<span>&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;</span>
+                                                        @Html.RadioButton("IsWarranty", "N", true, new { onclick = "showdiv('N')" })<span>&nbsp;&nbsp;&nbsp;No</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="Warranty" hidden="hidden">
+                                                <hr />
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="form-control-1">Warranty Duration(In Month)</label>
+                                                    <div class="col-sm-4">
+                                                        <input id="WarrantyDuration" name="WarrantyDuration" class="form-control" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="form-control-1">Warranty Duration(In Date)</label><br>
+                                                </div>
+                                                <hr />
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="form-control-1">From Date (AD)</label>
+                                                    <div class="col-sm-4">
+                                                        <input id="FromDate" name="FromDate" class="form-control datepicker" type="text">
+                                                    </div>
+                                                    <label class="col-sm-2 control-label" for="form-control-1">From Date (BS)</label>
+                                                    <div class="col-sm-4">
+                                                        <input id="FromDateBS" name="FromDateBS" class="form-control nepaliDate" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="form-control-1">To Date (AD)</label>
+                                                    <div class="col-sm-4">
+                                                        <input id="ToDate" name="ToDate" class="form-control datepicker" type="text">
+                                                    </div>
+                                                    <label class="col-sm-2 control-label" for="form-control-1">To Date (BS)</label>
+                                                    <div class="col-sm-4">
+                                                        <input id="ToDateBS" name="ToDateBS" class="form-control" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <button class="btn btn-primary" type="submit">Create</button>
+                                            </div>
+                                            }
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    function showdiv(stype) {
+        if (stype == "Y") {
+            $("#Warranty").show();
+        }
+        else if (stype == "N") {
+            $("#Warranty").hide();
+        }
+    }
+    //For From Date
+    $('#FromDate').change(function () {
+        $('#FromDateBS').val(AD2BS($('#FromDate').val()));
+    });
+
+    $('#FromDateBS').nepaliDatePicker({
+        ndpEnglishInput: 'FromDate'
+    });
+    //For To Date
+    $('#ToDate').change(function () {
+        $('#ToDateBS').val(AD2BS($('#ToDate').val()));
+    });
+
+    $('#ToDateBS').nepaliDatePicker({
+        ndpEnglishInput: 'ToDate'
+    });
+
+    $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd',
+        todayHighlight: 'true',
+        autoclose: 'true',
+        //language:'np',
+});
+</script>
+

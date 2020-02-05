@@ -1,0 +1,50 @@
+﻿@model NCIT_MIS.ViewModel.SystemUserTypeVM
+
+@{
+    ViewBag.Title = "UserType Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="layout-content-body container">
+        <div class="title-bar" style="margin-bottom: -40px;">
+            <div class="col-xs-10">  <h1 class="title-bar-title">User Type Detail</h1> </div>
+
+            <ol class="breadcrumb">
+                <li class="list">@Html.ActionLink("Edit", "Edit", "UserType", new { Id = Model.UserTypeId }, new { @class = "btn btn-xs-2 btn-success" })</li>
+                <li class="list">@Html.ActionLink("List", "Index", null, new { @class = "btn btn-xs-2 btn-success" })</li>
+            </ol>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-xs-12  ">
+                <div class="card" style="margin-top: 30px;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="demo-form-wrapper">
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <input type="text" id="FullName" name="FullName" hidden="hidden" value='@Session["FullName"]' />
+                                        <input type="text" id="DepartmentId" name="DepartmentId" hidden="hidden" value='@Session["DepartmentId"]' />
+                                        <input type="text" id="UserType" name="UserType" hidden="hidden" value='@Session["UserType"]' />
+                                        <input type="text" id="UserId" name="UserId" hidden="hidden" value='@Session["UserId"]' />
+                                        <div class="form form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">User Type</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBox("UserTypeName", Model.UserTypeName, new { @class = "form-control", ReadOnly="ReadOnly" })
+                                                    @Html.ValidationMessageFor(model => model.UserTypeName, "", new { @class = "text-danger" })
+                                                    @*<input id="DepartmentName" name="DepartmentName" class="form-control" type="text">*@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

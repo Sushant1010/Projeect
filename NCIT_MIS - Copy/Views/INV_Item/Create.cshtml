@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+
+    var data = "<option value=''>--Select-- </option>";
+    foreach (var a in ViewBag.UnitList)
+    {
+        data += "<option value='" + a.Value + "'>" + a.Text + "</option>";
+    }
+
+    <input type="hidden" name="hddUnit" id="hddUnit" value="@data">
+}
+
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">Inventory Item Create</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "INV_Item")">List</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                    <div class="form form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Inventory Item Name</label>
+                                            <div class="col-sm-4">
+                                                <input id="ItemName" name="ItemName" class="form-control" type="text" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Inventory Item Code</label>
+                                            <div class="col-sm-4">
+                                                <input id="ItemCode" name="ItemCode" class="form-control" type="text" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control">Category</label>
+                                            <div class="col-sm-4">
+                                                @Html.DropDownList("CategoryId", null, "-- Select --", new { @class = "form-control select2 DepartmentId", required = "required" })
+                                            </div>
+                                        </div>
+                                        @*<div class="form-group row">
+                                            <table class="table table-bordered table-condensed unittable" id="ItemUnit">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="col-sm-4">Unit</th>
+                                                        <th class="col-sm-3">Selling Price</th>
+                                                        <th class="col-sm-3">Quantity Per</th>
+                                                        <th class="col-sm-1"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="bItem">
+                                                    <tr id="addItem">
+
+                                                        <td>
+                                                            <input type='text' id='1' name='1' value='1' hidden>
+                                                            @{var i = 1;}
+                                                            <select class='form-control' style='text-transform:uppercase; width:100%' id='ItemUnitId-1' name='ItemUnitId-1'>
+                                                                <option selected>--SELECT--</option>
+                                                                @foreach (var item in ViewBag.UnitList)
+                                                                {
+                                                                    <option value="@item.Value">@item.Text</option>
+                                                                }
+                                                                <select>
+                                                        </td>
+                                                        <td><input type="text" id="Quantity-1" name="Quantity-1" class="form-control" onblur="GetTotal(1)" /></td>
+                                                        <td><a id='delete_row' title="Remove Item"><i class="fa fa-trash" style="font-size:30px; color:red; align-content:center;" aria-hidden="true"></i></a></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="6"><a id='add_row' class="btn btn-default pull-left">Add Row</a></td>
+                                                    </tr>
+
+                                                </tfoot>
+                                            </table>
+
+                                        </div>*@
+                                        
+                                        <button class="btn btn-primary" type="submit">Create</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showdiv(stype) {
+        if (stype == "Y") {
+            $("#Warranty").show();
+        }
+        else if (stype == "N") {
+            $("#Warranty").hide();
+        }
+    }
+    //For From Date
+    $('#FromDate').change(function () {
+        $('#FromDateBS').val(AD2BS($('#FromDate').val()));
+    });
+
+    $('#FromDateBS').nepaliDatePicker({
+        ndpEnglishInput: 'FromDate'
+    });
+    //For To Date
+    $('#ToDate').change(function () {
+        $('#ToDateBS').val(AD2BS($('#ToDate').val()));
+    });
+
+    $('#ToDateBS').nepaliDatePicker({
+        ndpEnglishInput: 'ToDate'
+    });
+
+    $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd',
+        todayHighlight: 'true',
+        autoclose: 'true',
+        //language:'np',
+    });
+</script>
+
+@*add*@
+<script>
+    $(function () {
+        //var rowno = $('.rowcount').val();
+        $(".table").on("click", "tr #delete_row", function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure to remove?")) {
+                $(this).parents('tr').remove();
+                CalculateSum();
+                //var frowno = parseInt(rowno) - 1;
+                //$('.rowcount').val(frowno);
+            }
+        });
+    });
+    $(document).ready(function () {
+        var i = 1;
+
+        $("#add_row").click(function () {
+            var rowno = $('.rowcount').val();
+            $('#addItem' + i).html("<td><input type='text' id='" + i + "' name='" + i + "' value='" + i + "' hidden><select class='form-control' style='text-transform:uppercase; width:100%' id='ItemUnitId-" + i + "' name='ItemUnitId-" + i + "' onchange='GetItem(" + i + ")' > " + document.getElementById("hddUnit").value + " </select></td > " +        
+             "<td><input type='text' id='Quantity-" + i + "' name='Quantity-" + i + "' class='form-control' onblur='GetTotal(" + i + ")' /></td>" +
+             "<td><a id='delete_row'><i class='fa fa-trash'  style='font-size:30px; color:red;' aria-hidden='true'></i></a></td>");
+
+            $('#bItem').append('<tr id="addItem' + (i + 1) + '"></tr>');
+            var frowno = parseInt(rowno) + 1;
+            $('.rowcount').val(frowno);
+            i++;
+        });
+    });
+</script>

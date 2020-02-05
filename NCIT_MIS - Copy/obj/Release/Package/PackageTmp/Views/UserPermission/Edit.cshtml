@@ -1,0 +1,93 @@
+﻿@model NCIT_MIS.ViewModel.SystemUserVM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">User Permission Edit</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "User")">List</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                <div class="form form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control-1">Full Name</label>
+                                        <div class="col-sm-4">
+                                            @Html.TextBox("FullName", Model.FullName, new { @class = "form-control", @readonly = "readonly" })
+                                            @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                                            @*<input id="FullName" name="FullName" class="form-control" type="text">*@
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control-1">Email</label>
+                                        <div class="col-sm-4">
+                                            @Html.TextBox("Email", Model.Email, new { @class = "form-control", @readonly = "readonly" })
+                                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                            @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control">IsAdmin</label>
+                                        <div class="col-sm-4">
+                                            <div class="checkbox">
+                                                @Html.EditorFor(model => model.IsAdmin)
+                                                @Html.ValidationMessageFor(model => model.IsAdmin, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control">AssetModuleAllow</label>
+                                        <div class="col-sm-4">
+                                            <div class="checkbox">
+                                                @Html.EditorFor(model => model.AssetModuleAllow)
+                                                @Html.ValidationMessageFor(model => model.AssetModuleAllow, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control">InventoryModuleAllow</label>
+                                        <div class="col-sm-4">
+                                            <div class="checkbox">
+                                                @Html.EditorFor(model => model.InventoryModuleAllow)
+                                                @Html.ValidationMessageFor(model => model.InventoryModuleAllow, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control">RequestModuleAllow</label>
+                                        <div class="col-sm-4">
+                                            <div class="checkbox">
+                                                @Html.EditorFor(model => model.RequestModuleAllow)
+                                                @Html.ValidationMessageFor(model => model.RequestModuleAllow, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Save Changes</button>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

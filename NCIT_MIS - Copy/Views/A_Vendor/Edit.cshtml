@@ -1,0 +1,74 @@
+﻿@model NCIT_MIS.ViewModel.A_VendorVM
+
+@{
+    ViewBag.Title = "Category Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="layout-content-body container">
+        <div class="title-bar" style="margin-bottom: 20px;">
+            <div class="col-xs-10">  <h1 class="title-bar-title">Vendor Edit</h1> </div>
+            <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "A_Vendor")">List</a>
+
+        </div>
+        <div class="row no-gutters">
+            <div class="col-xs-12  ">
+                <div class="card" style="margin-top: 30px;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="demo-form-wrapper">
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+                                    <div class="form form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Vendor Name</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("VendorName", Model.VendorName, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.VendorName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Pan No.</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("PanNo", Model.PanNo, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.PanNo, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Vendor Address</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("VendorAddress", Model.VendorAddress, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.VendorAddress, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Vendor Phone No.</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("VendorPhone", Model.VendorPhone, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.VendorPhone, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Vendor Mobile No.</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBox("VendorMobile", Model.VendorMobile, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.VendorMobile, "", new { @class = "text-danger" })
+                                            </div>
+
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Update</button>
+                                    </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>

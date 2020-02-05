@@ -1,0 +1,190 @@
+﻿@model NCIT_MIS.ViewModel.INV_Purchase
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="layout-content-body container">
+        <div class="title-bar" style="margin-bottom: 20px;">
+            <div class="col-xs-10">  <h1 class="title-bar-title">Inventory Purchase Detail</h1> </div>
+            <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "INV_Purchase")">List</a>
+
+        </div>
+        <div class="row no-gutters">
+            <div class="col-xs-12  ">
+                <div class="card" style="margin-top: 30px;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="demo-form-wrapper">
+                                    @using (Html.BeginForm())
+                                    {
+                                        <div class="form form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">S.N.</label>
+                                                <div class="col-sm-4">
+                                                    <input id="BillSerialNo" name="BillSerialNo" value="@Model.INV_PurchaseBillDetail.BillSerialNo" class="form-control" type="text" required="required" readonly>
+                                                </div>
+
+                                                <label class="col-sm-2 control-label" for="form-control">Vendor</label>
+                                                <div class="col-sm-4">
+                                                    <input id="VendorName" name="VendorName" value="@Model.INV_PurchaseBillDetail.VendorName" class="form-control" type="text" required="required" readonly>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Bill Date (AD)</label>
+                                                <div class="col-sm-4">
+                                                    <input id="BillDate" name="BillDate" value="@Model.INV_PurchaseBillDetail.BillDate" class="form-control" type="text" required="required" readonly>
+                                                </div>
+                                                <label class="col-sm-2 control-label" for="form-control-1">Bill Date (BS)</label>
+                                                <div class="col-sm-4">
+                                                    <input id="BillDateBS" name="BillDateBS" value="@Model.INV_PurchaseBillDetail.BillDateBS" class="form-control" type="text" required="required" readonly>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Bill No.</label>
+                                                <div class="col-sm-4">
+                                                    <input id="BillNo" name="BillNo" value="@Model.INV_PurchaseBillDetail.BillNo" class="form-control" type="text" required="required" readonly>
+                                                </div>
+
+                                                <label class="col-sm-2 control-label" for="form-control-1">Remarks</label>
+                                                <div class="col-sm-4">
+                                                    <input id="Remarks" name="Remarks" value="@Model.INV_PurchaseBillDetail.Remarks" class="form-control" type="text" required="required" readonly>
+                                                </div>
+                                            </div>
+
+                                            <hr>
+                                            <input type='hidden' name='hddrowindex' value='1' class='rowcount' />
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    @*<table class="table table-bordered table-condensed unittable" id="ItemUnit">*@
+                                                    <table class="table table-bordered table-condensed unittable" id="tab_logic">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="col-sm-3">Item</th>
+                                                                <th class="col-sm-1">Quantity</th>
+                                                                <th class="col-sm-1">Rate</th>
+                                                                <th class="col-sm-1">Total</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="bItem">
+                                                            @foreach (var item in Model.INV_PurchaseItemList)
+                                                            {
+                                                                <tr id="addItem">
+                                                                    <td><input id="Remarks" name="Remarks" value="@item.ItemName" class="form-control" type="text" required="required" readonly></td>
+                                                                    <td><input id="Remarks" name="Remarks" value="@item.PurchaseQuantity" class="form-control" type="text" required="required" readonly></td>
+                                                                    <td><input id="Remarks" name="Remarks" value="@item.Rate" class="form-control" type="text" required="required" readonly></td>
+                                                                    <td><input id="Remarks" name="Remarks" value="@item.Total" class="form-control" type="text" required="required" readonly></td>
+                                                                </tr>
+                                                            }
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><b>Total Amount</b></span>
+                                                            <input id="TotalAmount" name="TotalAmount" value="@Model.INV_PurchaseBillDetail.TotalAmount" class="form-control" type="text" required="required" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><b>Discount(%)</b></span>
+                                                            <input id="TotalAmount" name="TotalAmount" value="@Model.INV_PurchaseBillDetail.DiscountPercent" class="form-control" type="text" required="required" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><b>Discount Amt</b></span>
+                                                            <input id="TotalAmount" name="TotalAmount" value="@Model.INV_PurchaseBillDetail.DiscountAmount" class="form-control" type="text" required="required" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><b>Taxable Amt</b></span>
+                                                            <input id="TotalAmount" name="TotalAmount" value="@Model.INV_PurchaseBillDetail.TaxableAmount" class="form-control" type="text" required="required" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @*<div class="col-sm-offset-9 col-sm-7">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3">
+                                                        <label style="padding-top:10px;"><b>Vat Applicable?</b></label>
+                                                    </div>
+                                                    <div class="col-sm-2" style="padding:0;">
+                                                        <div class="checkbox">
+                                                            @Html.RadioButton("VatApplicable", "Yes", false, new { onclick = "showdiv('Y')" })<span>Yes</span>&nbsp;&nbsp;
+                                                            @Html.RadioButton("VatApplicable", "No", true, new { onclick = "showdiv('N')" })<span>No</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>*@
+                                            <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                                @*<div id="VatDiv" hidden>*@
+                                                <div id="VatDiv">
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-3">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon" value="13"><b>VAT Percent</b></span>
+                                                                <input id="VatPercent" name="VatPercent" value="@Model.INV_PurchaseBillDetail.VatPercent" class="form-control" type="text" required="required" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-3">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><b>VAT Amount</b></span>
+                                                                <input id="VatAmount" name="VatAmount" value="@Model.INV_PurchaseBillDetail.VatAmount" class="form-control" type="text" required="required" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+
+                                                    <div class="col-sm-3">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon" value="0"><b>Grand Total</b></span>
+                                                            <input id="TotalWithVat" name="TotalWithVat" value="@Model.INV_PurchaseBillDetail.TotalWithVat" class="form-control" type="text" required="required" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                @*<div class="form-group row">
+                                                    <div class="col-sm-offset-2 col-sm-10">
+                                                        <input type="submit" value="Save" class="btn btn-success" />
+                                                    </div>
+                                                </div>*@
+                                            </div>
+                                            @*<button class="btn btn-primary" type="submit">Create</button>*@
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

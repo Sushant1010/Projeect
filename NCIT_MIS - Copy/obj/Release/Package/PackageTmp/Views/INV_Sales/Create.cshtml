@@ -1,0 +1,480 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@{
+        var data = "<option value=''>--Select-- </option>";
+        foreach (var a in ViewBag.CategoryList)
+        {
+            data += "<option value='" + a.Value + "'>" + a.Text + "</option>";
+        }
+        <input type="hidden" name="hddCategory" id="hddCategory" value="@data">
+
+        var data1 = "<option value=''>--Select-- </option>";
+        foreach (var a in ViewBag.ItemList)
+        {
+            data1 += "<option value='" + a.Value + "'>" + a.Text + "</option>";
+        }
+        <input type="hidden" name="hddItem" id="hddItem" value="@data1">
+    }
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">Inventory Sales Create</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "INV_Sales")">List</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                <div class="form form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control-1">S.N.</label>
+                                        <div class="col-sm-4">
+                                            <input id="BillSerialNo" name="BillSerialNo" value="@ViewBag.BSN" class="form-control" type="text" required="required" readonly>
+                                        </div>
+
+                                        <label class="col-sm-2 control-label" for="form-control">Vendor</label>
+                                        <div class="col-sm-4">
+                                            @Html.DropDownList("VendorId", null, "-- Select --", new { @class = "form-control select2", required = "required" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control-1">Bill Date (AD)</label>
+                                        <div class="col-sm-4">
+                                            <input id="BillDate" name="BillDate" class="form-control datepicker" type="text">
+                                        </div>
+                                        <label class="col-sm-2 control-label" for="form-control-1">Bill Date (BS)</label>
+                                        <div class="col-sm-4">
+                                            <input id="BillDateBS" name="BillDateBS" class="form-control nepaliDate" type="text">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-control-1">Bill No.</label>
+                                        <div class="col-sm-4">
+                                            <input id="BillNo" name="BillNo" class="form-control" type="text" required="required">
+                                        </div>
+
+                                        <label class="col-sm-2 control-label" for="form-control-1">Remarks</label>
+                                        <div class="col-sm-4">
+                                            <input id="Remarks" name="Remarks" class="form-control" type="text" required="required">
+                                        </div>
+                                    </div>
+
+                                    <hr>
+                                    <input type='hidden' name='hddrowindex' value='1' class='rowcount' />
+                                    <div class="form-group row">
+                                        <div class="col-sm-12">
+                                            @*<table class="table table-bordered table-condensed unittable" id="ItemUnit">*@
+                                            <table class="table table-bordered table-condensed unittable" id="tab_logic">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="col-sm-3">Category</th>
+                                                        <th class="col-sm-3">Item</th>
+                                                        <th class="col-sm-1">Quantity</th>
+                                                        <th class="col-sm-1">Rate</th>
+                                                        <th class="col-sm-1">Total</th>
+                                                        @*<th class="col-sm-1">Register to Asset</th>*@
+                                                        <th class="col-sm-1">Remove</th>
+                                                        @*<th class="col-sm-1">Save</th>*@
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="bItem">
+                                                    <tr id="addItem">
+
+                                                        <td><input type='text' id='1' name='1' value='1' hidden>
+                                                            @{var i = 1;}
+                                                            <select class='form-control' style='text-transform:uppercase; width:100%' id='CategoryId-1' name='CategoryId-1' onchange='GetItem(1)'>
+                                                                <option selected>--SELECT--</option>
+                                                                @foreach (var category in ViewBag.CategoryList)
+                                                                {
+                                                                    <option value="@category.Value">@category.Text</option>
+                                                                }
+                                                                <select>
+                                                        </td>
+                                                        <td>
+                                                            <select class='form-control' style='text-transform:uppercase; width:100%' id='ItemId-1' name='ItemId-1'>
+                                                                <option selected>--SELECT--</option>
+                                                                @foreach (var item in ViewBag.ItemList)
+                                                                {
+                                                                    <option value="@item.Value">@item.Text</option>
+                                                                }
+                                                                <select>
+                                                        </td>
+                                                        <td><input type="text" id="Quantity-1" name="Quantity-1" class="form-control" onblur="GetTotal(1)" /></td>
+                                                        <td><input type="text" id="Rate-1" name="Rate-1" class="form-control" onblur="GetTotal(1)" /></td>
+                                                        <td><input type="number" step="2" id="Total-1" name="Total-1" class="form-control totalprice" /></td>
+                                                        <td><a id='delete_row' title="Remove Item"><i class="fa fa-trash" style="font-size:30px; color:red; align-content:center;" aria-hidden="true"></i></a></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="6"><a id='add_row' class="btn btn-default pull-left">Add Row</a></td>
+                                                    </tr>
+
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                        <div class="form-group row">
+                                            <div class="col-sm-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><b>Total Amount</b></span>
+                                                    @Html.TextBox("TotalAmount", "", new { @class = "form-control", required = "required", @type = "number", @step = "2" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                        <div class="form-group row">
+                                            <div class="col-sm-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><b>Discount(%)</b></span>
+                                                    @Html.TextBox("DiscountPercent", "", new { @class = "form-control", @type = "number", @step = "any" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                        <div class="form-group row">
+                                            <div class="col-sm-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><b>Discount Amt</b></span>
+
+                                                    @Html.TextBox("DiscountAmount", "", new { @class = "form-control", @type = "number", @step = "any" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                        <div class="form-group row">
+                                            <div class="col-sm-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><b>Taxable Amt</b></span>
+                                                    @Html.TextBox("TaxableAmount", "", new { @class = "form-control", @type = "Number", @step = "any" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-offset-9 col-sm-7">
+                                        <div class="form-group row">
+                                            <div class="col-sm-3">
+                                                <label style="padding-top:10px;"><b>Vat Applicable?</b></label>
+                                            </div>
+                                            <div class="col-sm-2" style="padding:0;">
+                                                <div class="checkbox">
+                                                    @Html.RadioButton("VatApplicable", "Yes", false, new { onclick = "showdiv('Y')" })<span>Yes</span>&nbsp;&nbsp;
+                                                    @Html.RadioButton("VatApplicable", "No", true, new { onclick = "showdiv('N')" })<span>No</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                        <div id="VatDiv" hidden>
+                                            <div class="form-group row">
+                                                <div class="col-sm-3">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" value="13"><b>VAT Percent</b></span>
+                                                        @Html.TextBox("VatPercent", "13", new { @class = "form-control", @readonly = "readonly" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-3">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><b>VAT Amount</b></span>
+                                                        <input type="number" step="any" id="VatAmount" value="0" name="VatAmount" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+
+                                            <div class="col-sm-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon" value="0"><b>Grand Total</b></span>
+                                                    @Html.TextBox("TotalWithVat", "0", new { @class = "form-control", @readonly = "readonly" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <input type="submit" value="Save" class="btn btn-success" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<button class="btn btn-primary" type="submit">Create</button>*@
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //For Bill Date
+    $('#BillDate').change(function () {
+        $('#BillDateBS').val(AD2BS($('#BillDate').val()));
+    });
+
+    $('#BillDateBS').nepaliDatePicker({
+        ndpEnglishInput: 'BillDate'
+    });
+
+    $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd',
+        todayHighlight: 'true',
+        autoclose: 'true',
+        //language:'np',
+    });
+
+    //vatapplicable
+    function showdiv(inp) {
+        if (inp == 'Y') {
+            $("#VatDiv").show();
+            $('#VATPercent').val(13);
+            getVatAmount();
+        }
+        else {
+            var amount = $('#TaxableAmount').val();
+            $('#VATPercent').val(0);
+            $("#VatDiv").hide();
+            $("#VatAmount").val(0);
+            $("#TotalWithVat").val(amount);
+        }
+    }
+</script>
+
+
+@*add*@
+<script>
+    $(function () {
+        //var rowno = $('.rowcount').val();
+        $(".table").on("click", "tr #delete_row", function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure to remove?")) {
+                $(this).parents('tr').remove();
+                CalculateSum();
+                //var frowno = parseInt(rowno) - 1;
+                //$('.rowcount').val(frowno);
+            }
+        });
+    });
+    $(document).ready(function () {
+        var i = 1;
+        
+        $("#add_row").click(function () {
+            var rowno = $('.rowcount').val();
+            $('#addItem' + i).html("<td><input type='text' id='"+i+"' name='"+i+"' value='"+i+"' hidden><select class='form-control' style='text-transform:uppercase; width:100%' id='CategoryId-" + i + "' name='CategoryId-" + i + "' onchange='GetItem(" + i + ")' > " + document.getElementById("hddCategory").value + " </select></td > " +
+                "<td><select class='form-control'  style='text-transform:uppercase; width:100%' id='ItemId-" + i + "' name='ItemId-" + i + "'>" + document.getElementById("hddItem").value + "<select></td>" +
+                "<td><input type='text' id='Quantity-"+i+"' name='Quantity-"+i+"' class='form-control' onblur='GetTotal("+i+")' /></td>" +
+                "<td><input type='text' id='Rate-"+i+"' name='Rate-"+i+"' class='form-control' onblur='GetTotal("+i+")' /></td>" +
+                "<td><input type='number' id='Total-"+i+"' name='Total-"+i+"' class='form-control totalprice' /></td>" +
+                //"<td><input type='text' id='Quantity-"+i+"' name='Quantity-"+i+"' class='form-control' /></td>" +
+                "<td><a id='delete_row'><i class='fa fa-trash'  style='font-size:30px; color:red;' aria-hidden='true'></i></a></td>");
+
+            $('#bItem').append('<tr id="addItem' + (i + 1) + '"></tr>');
+            var frowno = parseInt(rowno) + 1;
+            $('.rowcount').val(frowno);
+            i++;
+        });
+    });
+</script>
+
+@*Get Item List by CategoryId*@
+<script>
+    function GetItem(i)
+    {
+        var cat = $("#CategoryId-"+i).val();
+
+        $.ajax({
+                url: "@Url.Action("GetItemByCategory", "ForAll")",
+            type: "post",
+            data: { catid: cat},
+            success: function (response, textStatus, jqXHR) {
+                var $select = $("#ItemId-" + i);//district dropdown.
+                $select.empty();
+
+
+                $select.append(response);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                //alert("Something went wrong, Select Crew Type Again.");
+            },
+            complete: function () {
+            }
+        });
+    }
+</script>
+
+@*Calculation*@
+<script>
+    //Calculating individual item total
+    function GetTotal(i)
+    {
+        var qty = $("#Quantity-" + i).val();
+        var rate = $("#Rate-" + i).val();
+
+        //alert(qty + "," + rate + "," + parseInt(qty) * parseInt(rate));
+        var total = (parseFloat(qty) * parseFloat(rate));
+
+        $("#Total-" + i).val(total.toFixed(2));
+        CalculateSum();
+    }
+
+    function CalculateSum()
+    {
+        var sum = 0;
+        $('.totalprice').each(function () {
+            sum += parseFloat(this.value);
+        });
+        $("#TotalAmount").val(sum);
+    }
+
+    $('#DiscountAmount').blur(function () {
+
+        getVatAmount();
+
+    });
+
+    $('#DiscountPercent').blur(function () {
+        var discountPercent = $('#DiscountPercent').val();
+        var amount = $('#TotalAmount').val();
+        var net = 0;
+        var dis = 0;
+        if (discountPercent < 100) {
+            if (discountPercent > 0) {
+                dis = (discountPercent / 100) * amount;
+
+                net = amount - dis;
+                var roundValue = Math.round(net);
+               // $("#DiscountAmount").val(Math.round(dis));
+                document.getElementById('TaxableAmount').value = roundValue;
+                document.getElementById('DiscountAmount').value = Math.round(dis);
+                document.getElementById('TotalWithVat').value = roundValue;
+            }
+
+            else {
+                net = amount;
+                document.getElementById('TaxableAmount').value = net;
+                document.getElementById('TotalWithVat').value = net;
+                $("#DiscountAmount").val(dis);
+
+            }
+        }
+        else {
+            alert("Discount % not allowed");
+        }
+
+    });
+    $('#DiscountAmount').blur(function () {
+        var discountAmount = $('#DiscountAmount').val();
+        var amount = $('#TotalAmount').val();
+        var net = 0;
+        var dis = 0;
+   
+            if (discountAmount > 0) {
+                dis = (discountAmount / amount) * 100;
+                net = amount - discountAmount;
+                var roundValue = Math.round(net);
+                //$("#DiscountPercent").val(Math.round(dis));
+                document.getElementById('DiscountPercent').value = Math.round(dis);
+                document.getElementById('TaxableAmount').value = roundValue;
+                document.getElementById('TotalWithVat').value = roundValue;
+                //document.getElementById('net').value = roundValue;
+            }
+            else {
+                net = amount;
+                document.getElementById('TotalWithVat').value = net;
+                document.getElementById('TaxableAmount').value = net;
+                $("#DiscountPercent").val(dis);
+
+            }
+        
+    });
+
+    //function calNet() {
+    //    var discount = $('#DiscountPercent').val();
+    //    var amount = $('#TotalAmount').val();
+    //    var net = 0;
+    //    var dis = 0;
+    //    if (discount > 0) {
+    //        dis = (discount / 100) * amount;
+    //        net = amount - dis;
+    //        var roundValue = Math.round(net);
+
+    //        document.getElementById('net').value = roundValue;
+    //    }
+
+    //    if (discount <= 0) {
+    //        net = amount;
+    //        document.getElementById('net').value = net;
+    //    }
+    //}
+
+    function getVatAmount() {
+        var discount = $('#VATPercent').val();
+        var amount = $('#TaxableAmount').val();
+        var net = 0;
+        var dis = 0;
+        if (discount > 0) {
+            dis = (discount / 100) * amount;
+            net = parseFloat(amount) + parseFloat(dis);
+            var roundValue = Math.round(net);
+            $("#VatAmount").val(Math.round(dis));
+            document.getElementById('TotalWithVat').value = roundValue;
+        }
+
+        if (discount <= 0) {
+            net = amount;
+            document.getElementById('TotalWithVat').value = net;
+            $("#VatAmount").val(dis);
+
+        }
+    }
+    //VATPercent VatAmount TotalWithVat TotalAmount
+    //$('#VatAmount').blur(function () {
+
+    //    getVatPercent();
+    //});
+    function getVatPercent() {
+        var discount = $('#VatAmount').val();
+        var amount = $('#TaxableAmount').val();
+        var net = 0;
+        var dis = 0;
+        if (discount > 0) {
+            dis = (discount / amount) * 100;
+            net = parseFloat(amount) + parseFloat(discount);
+            var roundValue = Math.round(net);
+            $("#VATPercent").val(Math.round(dis));
+            document.getElementById('TotalWithVat').value = roundValue;
+        }
+
+        if (discount <= 0) {
+            net = amount;
+            document.getElementById('TotalWithVat').value = net;
+            $("#VATPercent").val(dis);
+
+        }
+    }
+</script>
+
+

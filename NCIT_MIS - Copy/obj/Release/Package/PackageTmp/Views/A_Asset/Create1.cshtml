@@ -1,0 +1,407 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">Asset Create</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "A_Asset")">List</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                    <div class="form form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Department</label>
+                                                <input id="TokenId" name="TokenId" value="@ViewBag.TokenId" class="form-control" type="hidden">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="DepartmentId1" name="DepartmentId1" value="@ViewBag.DepartmentID" class="form-control" type="hidden">
+                                                <input id="DepartmentName" name="DepartmentName" value="@ViewBag.DepartmenName" class="form-control" type="text" required="required" readonly>
+                                                @*@Html.DropDownList("DepartmentId1", null, "-- Select --", new { @class = "form-control", required = "required", onchange = "GetLocation()" })*@
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Location</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="LocationId" name="LocationId" value="@ViewBag.LocationId" class="form-control" type="hidden">
+                                                <input id="LocationName" name="LocationName" value="@ViewBag.LocationName" class="form-control" type="text" required="required" readonly>
+                                                @*@Html.DropDownList("LocationId", null, "-- Select --", new { @class = "form-control", required = "required", onchange = "GetLocationCode()" })*@
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Category</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="CategoryId" name="CategoryId" value="@ViewBag.CategoryId" class="form-control" type="hidden">
+                                                <input id="CategoryName" name="CategoryName" value="@ViewBag.CategoryName" class="form-control" type="text" required="required" readonly>
+                                                @*@Html.DropDownList("CategoryId", null, "-- Select --", new { @class = "form-control", required = "required", onchange = "GetItem()" })*@
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Asset Item</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="AssetItemId" name="AssetItemId" value="@ViewBag.AssetItemId" class="form-control" type="hidden">
+                                                <input id="AssetItemName" name="AssetItemName" value="@ViewBag.AssetItemName" class="form-control" type="textbox" required="required" readonly>
+                                                @*@Html.DropDownList("AssetItemId", null, "-- Select --", new { @class = "form-control", required = "required", onchange = "GetAssetCode()" })*@
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Asset Unique Code</label>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                @Html.TextBox("AssetUniqueCodeDep", "", new { required = "required", style = "width:40px; text-align:center;", @readonly = "readonly" }) -
+                                                @Html.TextBox("AssetUniqueCodeLoc", "", new { required = "required", style = "width:70px; text-align:center;", @readonly = "readonly" }) -
+                                                @Html.TextBox("AssetUniqueCodeItem", "", new { required = "required", style = "width:70px; text-align:center;", @readonly = "readonly" })
+                                            </div>
+                                            <div class="col-sm-1">
+                                               </div>
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Request Quantity</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="RequestQuantity" name="RequestQuantity" value="@ViewBag.RequestQuantity" class="form-control" type="text" required="required" readonly>
+                                                <span id="Message" style="color:red;" hidden> Insufficient Qunatity</span>
+                                            </div>
+                                        </div>
+
+                                        <hr />
+
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Asset Bill Date (AD)</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="AssetDate" name="AssetDate" class="form-control datepicker" type="text">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Asset Bill Date (BS)</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="AssetDateBS" name="AssetDateBS" class="form-control nepaliDate" type="text">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Descriptions</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <textarea id="Description" name="Description" class="form-control" type="text" required="required"></textarea>
+                                            </div>
+                                            @*<div class="col-sm-2">
+                                                    <label class="control-label" for="form-control-1">Remarks</label>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input id="Remarks" name="Remarks" class="form-control" type="text" required="required">
+                                                </div>*@
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Usefull Life(In Month)</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="UsefullLife" name="UsefullLife" class="form-control" type="text" required="required">
+                                            </div>
+                                        </div>
+
+                                        <hr />
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-2">
+                                                @Html.Label("Is Depreciable", new { @class = "control-label" })
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="">
+                                                    @Html.RadioButton("IsDepreciationApplicable", "Yes", false, new { onclick = "ShowDepreciate('Y')" })<span>Yes &nbsp; &nbsp;</span>
+                                                    @Html.RadioButton("IsDepreciationApplicable", "No", true, new { onclick = "ShowDepreciate('N')" })<span>No &nbsp; &nbsp;</span>
+                                                </div>
+                                            </div>
+                                            <div id="Depreciation" hidden>
+                                                <div class="col-sm-2">
+                                                    <label class="control-label" for="form-control-1">Depreciate Remarks</label>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input id="DepreciationRemarks" name="DepreciationRemarks" class="form-control" type="text">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group" id="Depreciation1" hidden>
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Depreciation Date (AD)</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="DepreciationDate" name="DepreciationDate" class="form-control datepicker" type="text">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Depreciation Date (BS)</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="DepreciationDateBS" name="DepreciationDateBS" class="form-control nepaliDate" type="text">
+                                            </div>
+                                        </div>
+
+                                        <hr />
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-2">
+                                                @Html.Label("Is Scrap", new { @class = "control-label" })
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="">
+                                                    @Html.RadioButton("IsScrap", "Yes", false, new { onclick = "ShowScrap('Y')" })<span>Yes &nbsp; &nbsp;</span>
+                                                    @Html.RadioButton("IsScrap", "No", true, new { onclick = "ShowScrap('N')" })<span>No &nbsp; &nbsp;</span>
+                                                </div>
+                                            </div>
+                                            <div id="Scrap" hidden>
+                                                <div class="col-sm-2">
+                                                    <label class="control-label" for="form-control-1">Scrap Value</label>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input id="ScrapRealizeValue" name="ScrapRealizeValue" class="form-control" type="text">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group" id="Scrap1" hidden>
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Scrap Date (AD)</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="ScrapDate" name="ScrapDate" class="form-control datepicker" type="text">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="control-label" for="form-control-1">Scrap Date (BS)</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input id="ScrapDateBS" name="ScrapDateBS" class="form-control nepaliDate" type="text">
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                            <div class="form-group row">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <input type="submit" value="Save" id="submit" class="btn btn-success" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @*<button class="btn btn-primary" type="submit">Create</button>*@
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //For Asset Date
+    $('#AssetDate').change(function () {
+        $('#AssetDateBS').val(AD2BS($('#AssetDate').val()));
+    });
+
+    $('#AssetDateBS').nepaliDatePicker({
+        ndpEnglishInput: 'AssetDate'
+    });
+    //For Asset Date
+    $('#DepreciationDate').change(function () {
+        $('#DepreciationDateBS').val(AD2BS($('#DepreciationDate').val()));
+    });
+
+    $('#DepreciationDateBS').nepaliDatePicker({
+        ndpEnglishInput: 'DepreciationDate'
+    });
+    //For Asset Date
+    $('#ScrapDate').change(function () {
+        $('#ScrapDateBS').val(AD2BS($('#ScrapDate').val()));
+    });
+
+    $('#ScrapDateBS').nepaliDatePicker({
+        ndpEnglishInput: 'ScrapDate'
+    });
+    $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd',
+        todayHighlight: 'true',
+        autoclose: 'true',
+        //language:'np',
+    });
+
+    //vatapplicable
+    function showdiv(inp) {
+        if (inp == 'Y') {
+            $("#VatDiv").show();
+            $('#VATPercent').val(13);
+            getVatAmount();
+        }
+        else {
+            var amount = $('#TaxableAmount').val();
+            $('#VATPercent').val(0);
+            $("#VatDiv").hide();
+            $("#VatAmount").val(0);
+            $("#TotalWithVat").val(amount);
+        }
+    }
+</script>
+<script>
+    function ShowDepreciate(value) {
+        if (value == "Y") {
+            $("#Depreciation").show();
+            $("#Depreciation1").show();
+        }
+        else {
+            $("#Depreciation").hide();
+            $("#Depreciation1").hide();
+        }
+    }
+
+    function ShowScrap(value)
+    {
+        if (value == "Y") {
+            $("#Scrap").show();
+            $("#Scrap1").show();
+        }
+        else {
+            $("#Scrap").hide();
+            $("#Scrap1").hide();
+        }
+    }
+</script>
+
+@*Get Item List by CategoryId*@
+<script>
+    function GetItem()
+    {
+        var cat = $("#CategoryId").val();
+
+        $.ajax({
+                url: "@Url.Action("GetItemByCategory", "ForAll")",
+            type: "post",
+            data: { catid: cat},
+            success: function (response, textStatus, jqXHR) {
+                var $select = $("#AssetItemId");//district dropdown.
+                $select.empty();
+                $select.append(response);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                //alert("Something went wrong, Select Crew Type Again.");
+            },
+            complete: function () {
+            }
+        });
+    }
+    /////////////////////////////
+    $( document ).ready(function() {
+        var DepId = $("#DepartmentId1").val();
+        $.ajax({
+                url: "@Url.Action("GetLocationListByDepartmentId", "ForAll")",
+            type: "post",
+            data: { catid: DepId},
+            success: function (response, textStatus, jqXHR) {
+                $("#AssetUniqueCodeDep").empty();
+                $("#AssetUniqueCodeDep").val(response.DepartCode);
+                DepId.hide();
+                //var $select = $("#LocationId");//district dropdown.
+                //$select.empty();
+                //$select.append(response.msg);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                //alert("Something went wrong, Select Crew Type Again.");
+            },
+            complete: function () {
+            }
+        });
+    });
+    //////////////////////////
+    $( document ).ready(function() {
+        var LocId = $("#LocationId").val();
+        $.ajax({
+                url: "@Url.Action("GetLocationCode", "ForAll")",
+            type: "post",
+            data: { catid: LocId},
+            success: function (response, textStatus, jqXHR) {
+                $("#AssetUniqueCodeLoc").empty();
+                $("#AssetUniqueCodeLoc").val(response);
+                LocId.hide();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                //alert("Something went wrong, Select Crew Type Again.");
+            },
+            complete: function () {
+            }
+        });
+    });
+
+    $( document ).ready(function() {
+
+        var aid = $("#AssetItemId").val();
+        var loc = $("#LocationId").val();
+
+        $.ajax({
+                url: "@Url.Action("GetAssetUniqueID", "ForAll")",
+            type: "post",
+            data: { assId: aid, locId: loc },
+
+            success: function (response, textStatus, jqXHR) {
+                $("#AssetUniqueCodeItem").empty();
+                $("#AssetUniqueCodeItem").val(response);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                //alert("Something went wrong, Select Crew Type Again.");
+            },
+            complete: function () {
+            }
+        });
+    });
+    ///////////
+    $( document ).ready(function() {
+        var Qty = $("#RequestQuantity").val();
+        var AssetId = $("#AssetItemId").val();
+        $.ajax({
+                url: "@Url.Action("CheckQuantity", "ForAll")",
+            type: "post",
+            data: { qty: Qty, assId: AssetId },
+            success: function (response, textStatus, jqXHR) {
+                
+                if (response < Qty) {
+                    $("#Message").show();
+                    $("#submit").attr("disabled", true);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                //alert("Something went wrong, Select Crew Type Again.");
+            },
+            complete: function () {
+            }
+        });
+    });
+</script>
+
+
+

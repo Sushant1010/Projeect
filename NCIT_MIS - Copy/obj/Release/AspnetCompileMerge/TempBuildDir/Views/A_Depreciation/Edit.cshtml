@@ -1,0 +1,62 @@
+﻿@model NCIT_MIS.ViewModel.A_DepreciationVM
+
+@{
+    ViewBag.Title = "Depreciation Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="layout-content-body container">
+        <div class="title-bar" style="margin-bottom: 20px;">
+            <div class="col-xs-10">  <h1 class="title-bar-title">Depreciation Edit</h1> </div>
+            <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "A_Depreciaiton")">List</a>
+
+        </div>
+        <div class="row no-gutters">
+            <div class="col-xs-12  ">
+                <div class="card" style="margin-top: 30px;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="demo-form-wrapper">
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div class="form form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Depreciation Name</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBox("DepreciationName", Model.DepreciationName, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.DepreciationName, "", new { @class = "text-danger" })
+                                                    @*<input id="FullName" name="FullName" class="form-control" type="text">*@
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Depreciation Rate</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBox("DepreciationRate", Model.DepreciationRate, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.DepreciationRate, "", new { @class = "text-danger" })
+                                                    @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Description</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBox("Description", Model.Description, new { @class = "form-control", placeholder="Max. 100 charaters..." })
+                                                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                                    @*<input id="Password" name="Password" class="form-control" type="text">*@
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Update</button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>

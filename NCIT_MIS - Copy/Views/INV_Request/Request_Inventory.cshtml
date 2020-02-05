@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@{
+    var data = "<option value=''>--Select-- </option>";
+    foreach (var a in ViewBag.CategoryList)
+    {
+        data += "<option value='" + a.Value + "'>" + a.Text + "</option>";
+    }
+    <input type="hidden" name="hddCategory" id="hddCategory" value="@data">
+
+    var data1 = "<option value=''>--Select-- </option>";
+    foreach (var a in ViewBag.ItemList)
+    {
+        data1 += "<option value='" + a.Value + "'>" + a.Text + "</option>";
+    }
+    <input type="hidden" name="hddItem" id="hddItem" value="@data1">
+}
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">Inventory Request Create</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "Request")">List</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                    <div class="form form-horizontal">
+
+                                        <input type='hidden' name='hddrowindex' value='1' class='rowcount' />
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                @*<table class="table table-bordered table-condensed unittable" id="ItemUnit">*@
+                                                <table class="table table-bordered table-condensed unittable" id="tab_logic">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="col-sm-3">Category</th>
+                                                            <th class="col-sm-3">Item</th>
+                                                            <th class="col-sm-1">Quantity</th>
+                                                            <th class="col-sm-1">Unit</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="bItem">
+                                                        <tr id="addItem">
+                                                            
+                                                            <td>
+                                                                <input type='text' id='1' name='1' value='1' hidden>
+                                                                @{var i = 1;}
+                                                                <select class='form-control' style='text-transform:uppercase; width:100%' id='CategoryId-1' name='CategoryId-1' onchange='GetItem(1)'>
+                                                                    <option selected>--SELECT--</option>
+                                                                    @foreach (var category in ViewBag.CategoryList)
+                                                                    {
+                                                                        <option value="@category.Value">@category.Text</option>
+                                                                    }
+                                                                    <select>
+                                                            </td>
+                                                            <td>
+                                                                <select class='form-control' style='text-transform:uppercase; width:100%' id='ItemId-1' name='ItemId-1'>
+                                                                    <option selected>--SELECT--</option>
+                                                                    @foreach (var item in ViewBag.ItemList)
+                                                                    {
+                                                                        <option value="@item.Value">@item.Text</option>
+                                                                    }
+                                                                    <select>
+                                                            </td>
+                                                            <td><input type="text" id="Quantity-1" name="Quantity-1" class="form-control" onblur="GetTotal(1)" /></td>
+                                                            <td>
+                                                                <select class='form-control' style='text-transform:uppercase; width:100%' id='UnitId-1' name='UnitId-1'>
+                                                                    <option selected>--SELECT--</option>
+                                                                    @foreach (var item in ViewBag.UnitList)
+                                                                    {
+                                                                        <option value="@item.Value">@item.Text</option>
+                                                                    }
+                                                                    <select>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                    @*<tfoot>
+                                                        <tr>
+                                                            <td colspan="6"><a id='add_row' class="btn btn-default pull-left">Add Row</a></td>
+                                                        </tr>
+
+                                                    </tfoot>*@
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-offset-9 col-sm-12 totalcalc">
+                                            <div class="form-group row">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <input type="submit" value="Request" class="btn btn-success" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*add*@
+<script>
+    $(function () {
+        $(".table").on("click", "tr #delete_row", function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure to remove?")) {
+                $(this).parents('tr').remove();
+                CalculateSum();
+            }
+        });
+    });
+    $(document).ready(function () {
+        var i = 1;
+
+        $("#add_row").click(function () {
+            var rowno = $('.rowcount').val();
+            $('#addItem' + i).html("<td><input type='text' id='"+i+"' name='"+i+"' value='"+i+"' hidden><select class='form-control' style='text-transform:uppercase; width:100%' id='AssetCategoryId-" + i + "' name='AssetCategoryId-" + i + "' onchange='GetItem(" + i + ")' > " + document.getElementById("hddCategory").value + " </select></td > " +
+                "<td><select class='form-control'  style='text-transform:uppercase; width:100%' id='ItemId-" + i + "' name='AssetItemId-" + i + "'>" + document.getElementById("hddItem").value + "<select></td>" +
+                "<td><input type='text' id='Quantity-"+i+"' name='Quantity-"+i+"' class='form-control' onblur='GetTotal("+i+")' /></td>" +
+                "<td><a id='delete_row'><i class='fa fa-trash'  style='font-size:30px; color:red;' aria-hidden='true'></i></a></td>");
+
+            $('#bItem').append('<tr id="addItem' + (i + 1) + '"></tr>');
+            var frowno = parseInt(rowno) + 1;
+            $('.rowcount').val(frowno);
+            i++;
+        });
+    });
+</script>
+
+@*Get Item List by CategoryId*@
+<script>
+    function GetItem(i)
+    {
+        var cat = $("#CategoryId-"+i).val();
+
+        $.ajax({
+                url: "@Url.Action("GetInvItemByCategory", "ForAll")",
+            type: "post",
+            data: { catid: cat},
+            success: function (response, textStatus, jqXHR) {
+                var $select = $("#ItemId-" + i);//district dropdown.
+                $select.empty();
+
+
+                $select.append(response);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                //alert("Something went wrong, Select Crew Type Again.");
+            },
+            complete: function () {
+            }
+        });
+    }
+</script>
+
+

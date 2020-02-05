@@ -1,0 +1,69 @@
+﻿@model NCIT_MIS.ViewModel.DepartmentVM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="layout-content-body container">
+        <div class="title-bar" style="margin-bottom: 20px;">
+            <div class="col-xs-10">  <h1 class="title-bar-title">Department Edit</h1> </div>
+            <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "Department")">List</a>
+
+        </div>
+        <div class="row no-gutters">
+            <div class="col-xs-12  ">
+                <div class="card" style="margin-top: 30px;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="demo-form-wrapper">
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div class="form form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Department Name</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBox("DepartmentName", Model.DepartmentName, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.DepartmentName, "", new { @class = "text-danger" })
+                                                    @*<input id="FullName" name="FullName" class="form-control" type="text">*@
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Department Code</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBox("DepartmentCode", Model.DepartmentCode, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.DepartmentCode, "", new { @class = "text-danger" })
+                                                    @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Email</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBox("Email", Model.Email, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                                    @*<input id="Password" name="Password" class="form-control" type="text">*@
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control">Phone No.</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBox("PhoneNo",Model.PhoneNo, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.PhoneNo, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Update</button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>

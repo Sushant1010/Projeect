@@ -1,0 +1,88 @@
+﻿@model IEnumerable<NCIT_MIS.ViewModel.SystemUserVM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">User List</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Create", "User")">Create</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-header">
+                    <div class="card-actions">
+                        <button type="button" class="card-action card-toggler" title="Collapse"></button>
+                        <button type="button" class="card-action card-reload" title="Reload"></button>
+                        <!-- <button type="button" class="card-action card-remove" title="Remove"></button> -->
+                    </div>
+                </div>
+                @{ 
+                    int i = 1;
+                }
+                <div class="card-body">
+                    <table id="demo-datatables-2" class="table table-striped table-nowrap dataTable" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>S.N.</th>
+                                <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                                <th>@Html.DisplayNameFor(model => model.EnteredDate)</th>
+                                <th>@Html.DisplayNameFor(model => model.DepartmentName)</th>
+                                <th>@Html.DisplayNameFor(model => model.UserType)</th>
+                                <th>@Html.DisplayNameFor(model => model.IsActive)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>S.N.</th>
+                                <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                                <th>@Html.DisplayNameFor(model => model.EnteredDate)</th>
+                                <th>@Html.DisplayNameFor(model => model.DepartmentName)</th>
+                                <th>@Html.DisplayNameFor(model => model.UserType)</th>
+                                <th>@Html.DisplayNameFor(model => model.IsActive)</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <th>@i</th>
+                                <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.UEmail)</td>
+                                <th>@Html.DisplayFor(modelItem => item.EnteredDate@*.ToString("yyyy-MM-dd")*@)</th>
+                                <td>@Html.DisplayFor(modelItem => item.DepartmentName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.UserTypeName)</td>
+                                <td>
+                                    @if (item.IsActive == true)
+                                    {
+                                        <b class="btn-sm btn-success" disabled>Yes</b>
+                                    }
+                                    else
+                                    {
+                                        <b class="btn-sm btn-danger" disabled>No</b>
+                                    }
+                                </td>
+                                <td>
+                                    @Html.ActionLink(" ", "Edit", new { id = item.UserId }, new { @class = "fa fa-pencil text-primary", title = "Edit" }) |
+                                    @Html.ActionLink(" ", "Detail", new { id = item.UserId }, new { @class = "fa fa-list text-success", title = "Details" }) |
+                                    @Html.ActionLink(" ", "Delete", new { id = item.UserId }, new { @class = "fa fa-trash-o text-danger", title = "Delete", onclick = "return confirm('Are you sure to Delete?')" })
+                                </td>
+                            </tr>
+                                i++;
+                            }
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

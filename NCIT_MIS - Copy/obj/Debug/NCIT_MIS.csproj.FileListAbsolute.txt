@@ -1,0 +1,540 @@
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\NCIT_MIS.dll.config
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\NCIT_MIS.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\NCIT_MIS.pdb
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\csc.exe
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\csc.exe.config
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\csc.rsp
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\csi.exe
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\csi.exe.config
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\csi.rsp
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\Microsoft.Managed.Core.targets
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.AppContext.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Collections.Immutable.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Console.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.IO.Compression.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.IO.FileSystem.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.IO.Pipes.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Reflection.Metadata.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Security.AccessControl.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Security.Claims.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Security.Principal.Windows.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.ValueTuple.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Xml.XmlDocument.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Xml.XPath.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\vbc.exe
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\vbc.exe.config
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\vbc.rsp
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\VBCSCompiler.exe
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\roslyn\VBCSCompiler.exe.config
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\Antlr3.Runtime.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\Microsoft.Web.Infrastructure.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\Newtonsoft.Json.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.Helpers.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.Mvc.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.Optimization.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.Razor.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.WebPages.Deployment.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.WebPages.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.WebPages.Razor.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\WebGrease.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.Helpers.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.Mvc.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.Optimization.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.Razor.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.WebPages.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.WebPages.Deployment.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\System.Web.WebPages.Razor.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\Newtonsoft.Json.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\Antlr3.Runtime.pdb
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\obj\Debug\NCIT_MIS.csprojAssemblyReference.cache
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\obj\Debug\NCIT_MIS.csproj.CoreCompileInputs.cache
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\obj\Debug\NCIT_MIS.csproj.CopyComplete
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\obj\Debug\NCIT_MIS.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\obj\Debug\NCIT_MIS.pdb
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\Dapper.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS\bin\Dapper.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\NCIT_MIS.dll.config
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\NCIT_MIS.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\NCIT_MIS.pdb
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\csc.exe
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\csc.exe.config
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\csc.rsp
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\csi.exe
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\csi.exe.config
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\csi.rsp
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\Microsoft.Managed.Core.targets
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.AppContext.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Collections.Immutable.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Console.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.IO.Compression.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Reflection.Metadata.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Security.AccessControl.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Security.Claims.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Security.Principal.Windows.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.ValueTuple.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Xml.XmlDocument.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\vbc.exe
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\vbc.exe.config
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\vbc.rsp
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe.config
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\Antlr3.Runtime.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\Dapper.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\Microsoft.Web.Infrastructure.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\Newtonsoft.Json.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.Helpers.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.Mvc.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.Optimization.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.Razor.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.WebPages.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\WebGrease.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\Dapper.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.Helpers.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.Mvc.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.Optimization.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.Razor.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.WebPages.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\Newtonsoft.Json.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\Antlr3.Runtime.pdb
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csprojAssemblyReference.cache
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csproj.CopyComplete
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.dll
+D:\CollegeProject\NCIT_MIS\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.pdb
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.dll.config
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.pdb
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.exe
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.exe.config
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.rsp
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.exe
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.exe.config
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.rsp
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.Managed.Core.targets
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.AppContext.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Collections.Immutable.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Console.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Compression.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.AccessControl.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Reflection.Metadata.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.AccessControl.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Claims.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Principal.Windows.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.ValueTuple.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XmlDocument.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.exe
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.exe.config
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.rsp
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe.config
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Antlr3.Runtime.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Dapper.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.Web.Infrastructure.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Newtonsoft.Json.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Helpers.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Mvc.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Optimization.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Razor.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\WebGrease.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Dapper.xml
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Helpers.xml
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Mvc.xml
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Optimization.xml
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Razor.xml
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.xml
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.xml
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.xml
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Newtonsoft.Json.xml
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Antlr3.Runtime.pdb
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csprojAssemblyReference.cache
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csproj.CopyComplete
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.dll
+F:\Major Project\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.pdb
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.dll.config
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.pdb
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.exe
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.exe.config
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.rsp
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.exe
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.exe.config
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.rsp
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.Managed.Core.targets
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.AppContext.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Collections.Immutable.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Console.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Compression.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Reflection.Metadata.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.AccessControl.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Claims.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Principal.Windows.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.ValueTuple.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XmlDocument.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.exe
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.exe.config
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.rsp
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe.config
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Antlr3.Runtime.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Dapper.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.Web.Infrastructure.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Newtonsoft.Json.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Helpers.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Mvc.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Optimization.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Razor.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\WebGrease.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Dapper.xml
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Helpers.xml
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Mvc.xml
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Optimization.xml
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Razor.xml
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.xml
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.xml
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.xml
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Newtonsoft.Json.xml
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Antlr3.Runtime.pdb
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csprojAssemblyReference.cache
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csproj.CopyComplete
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.dll
+E:\NCIT_MIS - Copy\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.pdb
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.dll.config
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.pdb
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.exe
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.exe.config
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.rsp
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.exe
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.exe.config
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.rsp
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.AppContext.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Console.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Compression.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Claims.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.ValueTuple.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.exe
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.exe.config
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.rsp
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Antlr3.Runtime.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Dapper.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Newtonsoft.Json.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Helpers.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Mvc.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Optimization.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Razor.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\WebGrease.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Dapper.xml
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Helpers.xml
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Mvc.xml
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Optimization.xml
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Razor.xml
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.xml
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.xml
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Newtonsoft.Json.xml
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Antlr3.Runtime.pdb
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csprojAssemblyReference.cache
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csproj.CopyComplete
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.dll
+C:\Users\Sushant\Desktop\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.pdb
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.dll.config
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.pdb
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.exe
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.exe.config
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.rsp
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.exe
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.exe.config
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.rsp
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.Managed.Core.targets
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.AppContext.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Collections.Immutable.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Console.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Compression.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Reflection.Metadata.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.AccessControl.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Claims.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Principal.Windows.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.ValueTuple.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XmlDocument.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.exe
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.exe.config
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.rsp
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe.config
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Antlr3.Runtime.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Dapper.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.Web.Infrastructure.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Newtonsoft.Json.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Helpers.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Mvc.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Optimization.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Razor.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\WebGrease.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Dapper.xml
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Helpers.xml
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Mvc.xml
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Optimization.xml
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Razor.xml
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.xml
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.xml
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.xml
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Newtonsoft.Json.xml
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Antlr3.Runtime.pdb
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csprojAssemblyReference.cache
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csproj.CopyComplete
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.dll
+E:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.pdb
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.dll.config
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\NCIT_MIS.pdb
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.exe
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.exe.config
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csc.rsp
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.exe
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.exe.config
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\csi.rsp
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.Managed.Core.targets
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.AppContext.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Collections.Immutable.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Console.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Compression.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.AccessControl.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.IO.Pipes.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Reflection.Metadata.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.AccessControl.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Claims.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Security.Principal.Windows.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.ValueTuple.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XmlDocument.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.exe
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.exe.config
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\vbc.rsp
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\roslyn\VBCSCompiler.exe.config
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Antlr3.Runtime.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Dapper.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.Web.Infrastructure.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Newtonsoft.Json.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Helpers.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Mvc.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Optimization.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Razor.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\WebGrease.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Dapper.xml
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Helpers.xml
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Mvc.xml
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Optimization.xml
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.Razor.xml
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.xml
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Deployment.xml
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\System.Web.WebPages.Razor.xml
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Newtonsoft.Json.xml
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Antlr3.Runtime.pdb
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csprojAssemblyReference.cache
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.csproj.CopyComplete
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.dll
+F:\NCIT_MIS - Final\NCIT_MIS - Copy\NCIT_MIS - Copy\obj\Debug\NCIT_MIS.pdb

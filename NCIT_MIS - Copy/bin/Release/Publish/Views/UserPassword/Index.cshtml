@@ -1,0 +1,78 @@
+﻿@model NCIT_MIS.ViewModel.SystemUserVM
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: -40px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">User Detail</h1> </div>
+
+    <ol class="breadcrumb">
+        <li class="list">@Html.ActionLink("Edit", "Edit", "User", new { Id = Model.UserId }, new { @class = "btn btn-xs-2 btn-success" })</li>
+        <li class="list">@Html.ActionLink("List", "Index", null, new { @class = "btn btn-xs-2 btn-success" })</li>
+    </ol>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                    <div class="form form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Full Name</label>
+                                            <div class="col-sm-4">
+                                                @*<input id="FullName" name="FullName" class="form-control" type="text">*@
+                                                @Html.TextBoxFor(model => model.FullName, new { @class = "form-control", disabled = "disabled" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Email</label>
+                                            <div class="col-sm-4">
+                                                @*<input id="Email" name="Email" class="form-control" type="text">*@
+                                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", disabled = "disabled" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">Password</label>
+                                            <div class="col-sm-4">
+                                                @*<input id="Password" name="Password" class="form-control" type="text">*@
+                                                @Html.TextBoxFor(model => model.Password, new { @class = "form-control", disabled = "disabled" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control">Department</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(model => model.DepartmentId, new { @class = "form-control", disabled = "disabled" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control">User Type</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(model => model.UserType, new { @class = "form-control", disabled = "disabled" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control">Is Active?</label>
+                                            <div class="col-sm-4">
+                                                @Html.DisplayFor(model => model.IsActive, new { @class = "form-control", disabled = "disabled" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

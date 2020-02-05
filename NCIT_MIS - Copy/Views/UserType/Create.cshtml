@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "UserType Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">UserType Create</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "UserType")">List</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                    <div class="form form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="form-control-1">User Type</label>
+                                            <div class="col-sm-4">
+                                                <input id="UserTypeName" name="UserTypeName" class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Create</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layout-content-body container">
+        <div class="title-bar" style="margin-bottom: 20px;">
+            <div class="col-xs-10">  <h1 class="title-bar-title">User Create</h1> </div>
+            <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "User")">List</a>
+
+        </div>
+        <div class="row no-gutters">
+            <div class="col-xs-12  ">
+                <div class="card" style="margin-top: 30px;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="demo-form-wrapper">
+                                    @using (Html.BeginForm())
+                                    {
+                                        <input type="text" id="SesFullName" name="SesFullName" hidden="hidden" value='@Session["FullName"]' />
+                                        <input type="text" id="SesDepartmentId" name="SesDepartmentId" hidden="hidden" value='@Session["DepartmentId"]' />
+                                        <input type="text" id="SesUserType" name="SesUserType" hidden="hidden" value='@Session["UserType"]' />
+                                        <input type="text" id="SesUserId" name="SesUserId" hidden="hidden" value='@Session["UserId"]' />
+                                        <div class="form form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Full Name</label>
+                                                <div class="col-sm-4">
+                                                    <input id="FullName" name="FullName" class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Email</label>
+                                                <div class="col-sm-4">
+                                                    <input id="Email" name="Email" class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control-1">Password</label>
+                                                <div class="col-sm-4">
+                                                    <input id="Password" name="Password" class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control">Department</label>
+                                                <div class="col-sm-4">
+                                                    @Html.DropDownList("DepartmentId", null, "-- Select --", new { @class = "form-control select2 DepartmentId", required = "required" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control">User Type</label>
+                                                <div class="col-sm-4">
+                                                    <select id="UserType" name="UserType" class="form-control">
+                                                        <option value="" selected>--SELECT--</option>
+                                                        <option value="SuperAdmin">Super Admin</option>
+                                                        <option value="Admin">Admin</option>
+                                                        <option value="Employee">Employee</option>
+                                                        <option value="Teacher">Teacher</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="form-control">Is Active?</label>
+                                                <div class="col-sm-4">
+                                                    <div class="checkbox">
+                                                        @Html.RadioButton("IsActive", "Y", true)<span>&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;</span>
+                                                        @Html.RadioButton("IsActive", "N", false)<span>&nbsp;&nbsp;&nbsp;No</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Create</button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+

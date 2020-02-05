@@ -1,0 +1,380 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@{
+        var data = "<option value=''>--Select-- </option>";
+        foreach (var a in ViewBag.CategoryList)
+        {
+            data += "<option value='" + a.Value + "'>" + a.Text + "</option>";
+        }
+        <input type="hidden" name="hddCategory" id="hddCategory" value="@data">
+
+        var data1 = "<option value=''>--Select-- </option>";
+        foreach (var a in ViewBag.ItemList)
+        {
+            data1 += "<option value='" + a.Value + "'>" + a.Text + "</option>";
+        }
+        <input type="hidden" name="hddItem" id="hddItem" value="@data1">
+        
+        var data2 = "<option value=''>--Select-- </option>";
+        foreach (var a in ViewBag.UnitList)
+        {
+            data2 += "<option value='" + a.Value + "'>" + a.Text + "</option>";
+        }
+        <input type="hidden" name="hddUnit" id="hddUnit" value="@data2">
+    }
+<div class="layout-content-body container">
+    <div class="title-bar" style="margin-bottom: 20px;">
+        <div class="col-xs-10">  <h1 class="title-bar-title">Create</h1> </div>
+        <a class="btn btn-success col-xs-2 " href="@Url.Action("Index", "INV_Distribution")">List</a>
+
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-12  ">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="demo-form-wrapper">
+                                @using (Html.BeginForm())
+                                {
+                                <div class="form form-horizontal">
+                                    <div class="form-group">
+                                       
+                                        
+
+                                        <label class="col-sm-2 control-label" for="form-control">Department</label>
+                                        <div class="col-sm-4">
+                                            @Html.DropDownList("DepartmentId", null, "-- Select --", new { @class = "form-control select2", required = "required" })
+                                        </div>
+                                    </div>
+
+                                    <hr>
+                                    <input type='hidden' name='hddrowindex' value='1' class='rowcount' />
+                                    <div class="form-group row">
+                                        <div class="col-sm-12">
+                                            @*<table class="table table-bordered table-condensed unittable" id="ItemUnit">*@
+                                            <table class="table table-bordered table-condensed unittable" id="tab_logic">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="col-sm-3">Category</th>
+                                                        <th class="col-sm-3">Item</th>
+                                                        <th class="col-sm-1">Quantity</th>
+                                                        <th class="col-sm-1">Unit</th>
+                                                        
+                                                        <th class="col-sm-1">Remove</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="bItem">
+                                                    <tr id="addItem">
+
+                                                        <td><input type='text' id='1' name='1' value='1' hidden>
+                                                            @{var i = 1;}
+                                                            <select class='form-control' style='text-transform:uppercase; width:100%' id='CategoryId-1' name='CategoryId-1' onchange='GetItem(1)'>
+                                                                <option selected>--SELECT--</option>
+                                                                @foreach (var category in ViewBag.CategoryList)
+                                                                {
+                                                                    <option value="@category.Value">@category.Text</option>
+                                                                }
+                                                                </select>
+                                                        </td>
+                                                        <td>
+                                                            <select class='form-control' style='text-transform:uppercase; width:100%' id='ItemId-1' name='ItemId-1'>
+                                                                <option selected>--SELECT--</option>
+                                                                @foreach (var item in ViewBag.ItemList)
+                                                                {
+                                                                    <option value="@item.Value">@item.Text</option>
+                                                                }
+                                                                </select>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="Quantity-1" name="Quantity-1" class="form-control" onblur="CheckQuantity()" />
+                                                            <span id="Message" style="color:red;" hidden> Insufficient Qunatity</span>
+                                                        </td>
+                                                        <td>
+                                                            <select class='form-control' style='text-transform:uppercase; width:100%' id='UnitId-1' name='UnitId-1'>
+                                                                <option selected>--SELECT--</option>
+                                                                @foreach (var item in ViewBag.UnitList)
+                                                                {
+                                                                    <option value="@item.Value">@item.Text</option>
+                                                                }
+                                                                </select>
+                                                        </td>
+                                                        <td><a id='delete_row' title="Remove Item"><i class="fa fa-trash" style="font-size:30px; color:red; align-content:center;" aria-hidden="true"></i></a></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="6"><a id='add_row' class="btn btn-default pull-left">Add Row</a></td>
+                                                    </tr>
+
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    
+
+                                        <div class="form-group row pull-right">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <input type="submit" value="Save" id="submit" class="btn btn-success" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<button class="btn btn-primary" type="submit">Create</button>*@
+                               
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*add*@
+<script>
+    $(function () {
+        //var rowno = $('.rowcount').val();
+        $(".table").on("click", "tr #delete_row", function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure to remove?")) {
+                $(this).parents('tr').remove();
+                CalculateSum();
+                //var frowno = parseInt(rowno) - 1;
+                //$('.rowcount').val(frowno);
+            }
+        });
+    });
+    $(document).ready(function () {
+        var i = 1;
+        
+        $("#add_row").click(function () {
+            var rowno = $('.rowcount').val();
+            $('#addItem' + i).html("<td><input type='text' id='"+i+"' name='"+i+"' value='"+i+"' hidden><select class='form-control' style='text-transform:uppercase; width:100%' id='CategoryId-" + i + "' name='CategoryId-" + i + "' onchange='GetItem(" + i + ")' > " + document.getElementById("hddCategory").value + " </select></td > " +
+                "<td><select class='form-control'  style='text-transform:uppercase; width:100%' id='ItemId-" + i + "' name='ItemId-" + i + "'>" + document.getElementById("hddItem").value + "<select></td>" +
+                "<td><input type='text' id='Quantity-"+i+"' name='Quantity-"+i+"' class='form-control' onblur='GetTotal("+i+")' /></td>" +
+                "<td><select class='form-control'  style='text-transform:uppercase; width:100%' id='UnitId-" + i + "' name='UnitId-" + i + "'>" + document.getElementById("hddUnit").value + "<select></td>" +
+                
+                "<td><a id='delete_row'><i class='fa fa-trash'  style='font-size:30px; color:red;' aria-hidden='true'></i></a></td>");
+
+            $('#bItem').append('<tr id="addItem' + (i + 1) + '"></tr>');
+            var frowno = parseInt(rowno) + 1;
+            $('.rowcount').val(frowno);
+            i++;
+        });
+    });
+</script>
+
+@*Get Item List by CategoryId*@
+<script>
+    function CheckQuantity(i)
+    {
+        var Qty = $("#Quantity-1").val();
+        var InvId = $("#ItemId-1").val();
+        $.ajax({
+                url: "@Url.Action("CheckInvQuantity", "ForAll")",
+            type: "post",
+            data: { qty: Qty, invId: InvId },
+            success: function (response, textStatus, jqXHR) {
+                if (response < parseInt(Qty)) {
+                    $("#Message").show();
+                    $("#submit").attr("disabled", true);
+                } else {
+                    $("#Message").hide();
+                    $("#submit").attr("disabled", false);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                //alert("Something went wrong, Select Crew Type Again.");
+            },
+            complete: function () {
+            }
+        });
+    }
+    ////Check Quantity
+    function GetItem(i)
+    {
+        var cat = $("#CategoryId-"+i).val();
+
+        $.ajax({
+                url: "@Url.Action("GetInvItemByCategory", "ForAll")",
+            type: "post",
+            data: { catid: cat},
+            success: function (response, textStatus, jqXHR) {
+                var $select = $("#ItemId-" + i);//district dropdown.
+                $select.empty();
+
+
+                $select.append(response);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                //alert("Something went wrong, Select Crew Type Again.");
+            },
+            complete: function () {
+            }
+        });
+    }
+</script>
+
+@*Calculation*@
+<script>
+    //Calculating individual item total
+    function GetTotal(i)
+    {
+        var qty = $("#Quantity-" + i).val();
+        var rate = $("#Rate-" + i).val();
+
+        //alert(qty + "," + rate + "," + parseInt(qty) * parseInt(rate));
+        var total = (parseFloat(qty) * parseFloat(rate));
+
+        $("#Total-" + i).val(total.toFixed(2));
+        CalculateSum();
+    }
+
+    function CalculateSum()
+    {
+        var sum = 0;
+        $('.totalprice').each(function () {
+            sum += parseFloat(this.value);
+        });
+        $("#TotalAmount").val(sum);
+    }
+
+    $('#DiscountAmount').blur(function () {
+
+        getVatAmount();
+
+    });
+
+    $('#DiscountPercent').blur(function () {
+        var discountPercent = $('#DiscountPercent').val();
+        var amount = $('#TotalAmount').val();
+        var net = 0;
+        var dis = 0;
+        if (discountPercent < 100) {
+            if (discountPercent > 0) {
+                dis = (discountPercent / 100) * amount;
+
+                net = amount - dis;
+                var roundValue = Math.round(net);
+               // $("#DiscountAmount").val(Math.round(dis));
+                document.getElementById('TaxableAmount').value = roundValue;
+                document.getElementById('DiscountAmount').value = Math.round(dis);
+                document.getElementById('TotalWithVat').value = roundValue;
+            }
+
+            else {
+                net = amount;
+                document.getElementById('TaxableAmount').value = net;
+                document.getElementById('TotalWithVat').value = net;
+                $("#DiscountAmount").val(dis);
+
+            }
+        }
+        else {
+            alert("Discount % not allowed");
+        }
+
+    });
+    $('#DiscountAmount').blur(function () {
+        var discountAmount = $('#DiscountAmount').val();
+        var amount = $('#TotalAmount').val();
+        var net = 0;
+        var dis = 0;
+   
+            if (discountAmount > 0) {
+                dis = (discountAmount / amount) * 100;
+                net = amount - discountAmount;
+                var roundValue = Math.round(net);
+                //$("#DiscountPercent").val(Math.round(dis));
+                document.getElementById('DiscountPercent').value = Math.round(dis);
+                document.getElementById('TaxableAmount').value = roundValue;
+                document.getElementById('TotalWithVat').value = roundValue;
+                //document.getElementById('net').value = roundValue;
+            }
+            else {
+                net = amount;
+                document.getElementById('TotalWithVat').value = net;
+                document.getElementById('TaxableAmount').value = net;
+                $("#DiscountPercent").val(dis);
+
+            }
+        
+    });
+
+    //function calNet() {
+    //    var discount = $('#DiscountPercent').val();
+    //    var amount = $('#TotalAmount').val();
+    //    var net = 0;
+    //    var dis = 0;
+    //    if (discount > 0) {
+    //        dis = (discount / 100) * amount;
+    //        net = amount - dis;
+    //        var roundValue = Math.round(net);
+
+    //        document.getElementById('net').value = roundValue;
+    //    }
+
+    //    if (discount <= 0) {
+    //        net = amount;
+    //        document.getElementById('net').value = net;
+    //    }
+    //}
+
+    function getVatAmount() {
+        var discount = $('#VATPercent').val();
+        var amount = $('#TaxableAmount').val();
+        var net = 0;
+        var dis = 0;
+        if (discount > 0) {
+            dis = (discount / 100) * amount;
+            net = parseFloat(amount) + parseFloat(dis);
+            var roundValue = Math.round(net);
+            $("#VatAmount").val(Math.round(dis));
+            document.getElementById('TotalWithVat').value = roundValue;
+        }
+
+        if (discount <= 0) {
+            net = amount;
+            document.getElementById('TotalWithVat').value = net;
+            $("#VatAmount").val(dis);
+
+        }
+    }
+    //VATPercent VatAmount TotalWithVat TotalAmount
+    //$('#VatAmount').blur(function () {
+
+    //    getVatPercent();
+    //});
+    function getVatPercent() {
+        var discount = $('#VatAmount').val();
+        var amount = $('#TaxableAmount').val();
+        var net = 0;
+        var dis = 0;
+        if (discount > 0) {
+            dis = (discount / amount) * 100;
+            net = parseFloat(amount) + parseFloat(discount);
+            var roundValue = Math.round(net);
+            $("#VATPercent").val(Math.round(dis));
+            document.getElementById('TotalWithVat').value = roundValue;
+        }
+
+        if (discount <= 0) {
+            net = amount;
+            document.getElementById('TotalWithVat').value = net;
+            $("#VATPercent").val(dis);
+
+        }
+    }
+</script>
+
+
